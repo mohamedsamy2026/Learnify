@@ -63,18 +63,18 @@ export default function SettingsPage() {
 
   if (loading && !user) {
     return (
-      <main className="relative flex min-h-[75vh] items-center justify-center overflow-hidden bg-[#F6F9FE] px-6">
-        <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-[#DCEBFF] opacity-70 blur-[90px]" />
+      <main className="relative flex min-h-[75vh] items-center justify-center overflow-hidden bg-canvas px-6">
+        <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-hxb-dcebff opacity-70 blur-[90px]" />
 
-        <div className="relative flex flex-col items-center gap-5 rounded-[28px] border border-white bg-white/80 px-12 py-10 shadow-[0_25px_70px_-35px_rgba(40,107,193,0.3)] backdrop-blur-xl">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF3FF] text-[#286BC1]">
+        <div className="relative flex flex-col items-center gap-5 rounded-[28px] border border-white bg-surface/80 px-12 py-10 shadow-[0_25px_70px_-35px_rgba(40,107,193,0.3)] backdrop-blur-xl">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
             <LoaderCircle
               size={29}
               className="animate-spin"
             />
           </div>
 
-          <p className="text-sm font-semibold text-[#536B8B]">
+          <p className="text-sm font-semibold text-hxt-536b8b">
             Loading settings...
           </p>
         </div>
@@ -86,8 +86,8 @@ export default function SettingsPage() {
 
   if (!user) {
     return (
-      <main className="flex min-h-[75vh] flex-col items-center justify-center bg-[#F6F9FE] px-6 text-center">
-        <div className="w-full max-w-md rounded-[30px] border border-[#E3ECF8] bg-white p-10 shadow-[0_20px_60px_-30px_rgba(30,70,130,0.2)]">
+      <main className="flex min-h-[75vh] flex-col items-center justify-center bg-canvas px-6 text-center">
+        <div className="w-full max-w-md rounded-[30px] border border-line bg-surface p-10 shadow-[0_20px_60px_-30px_rgba(30,70,130,0.2)]">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
             <ShieldCheck size={30} />
           </div>
@@ -102,7 +102,7 @@ export default function SettingsPage() {
           <button
             type="button"
             onClick={loadSettings}
-            className="mt-7 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#286BC1] px-7 font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1955A0]"
+            className="mt-7 inline-flex min-h-12 items-center justify-center rounded-2xl bg-brand px-7 font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-hxb-1955a0"
           >
             Try Again
           </button>
@@ -112,22 +112,22 @@ export default function SettingsPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-x-clip bg-[#F6F9FE]">
+    <main className="min-h-screen overflow-x-clip bg-canvas">
 
       {/* ================= HERO ================= */}
 
-      <section className="relative isolate overflow-hidden bg-[#102B53] pb-32 pt-16 text-white sm:pb-36 sm:pt-20">
+      <section className="relative isolate overflow-hidden bg-hxb-102b53 pb-32 pt-16 text-white sm:pb-36 sm:pt-20">
 
         {/* Background lighting */}
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 -top-64 h-[600px] w-[600px] rounded-full bg-[#377EE3]/35 blur-[110px]"
+          className="pointer-events-none absolute -right-32 -top-64 h-[600px] w-[600px] rounded-full bg-hxb-377ee3/35 blur-[110px]"
         />
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-52 left-1/3 h-[450px] w-[600px] rounded-full bg-[#65ADFF]/20 blur-[120px]"
+          className="pointer-events-none absolute -bottom-52 left-1/3 h-[450px] w-[600px] rounded-full bg-hxb-65adff/20 blur-[120px]"
         />
 
         {/* Decorative circles */}
@@ -140,9 +140,9 @@ export default function SettingsPage() {
         <div className="settings-enter relative mx-auto max-w-7xl px-6 lg:px-12">
 
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-[2px] w-8 rounded-full bg-[#8BC4FF]" />
+            <span className="h-[2px] w-8 rounded-full bg-hxb-8bc4ff" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#A6CFFF]">
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-hxt-a6cfff">
               My Account
             </span>
           </div>
@@ -151,7 +151,7 @@ export default function SettingsPage() {
             Settings
           </h1>
 
-          <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#BED6F4] sm:text-base">
+          <p className="mt-5 max-w-xl text-[15px] leading-7 text-hxt-bed6f4 sm:text-base">
             Review your account and manage your session.
           </p>
 
@@ -168,24 +168,24 @@ export default function SettingsPage() {
 
           {/* ================= ACCOUNT INFORMATION ================= */}
 
-          <section className="settings-enter group relative overflow-hidden rounded-[30px] border border-white bg-white p-6 shadow-[0_22px_60px_-32px_rgba(20,52,92,0.42)] transition-all duration-500 hover:shadow-[0_30px_75px_-32px_rgba(20,52,92,0.48)] sm:p-9">
+          <section className="settings-enter group relative overflow-hidden rounded-[30px] border border-white bg-surface p-6 shadow-[0_22px_60px_-32px_rgba(20,52,92,0.42)] transition-all duration-500 hover:shadow-[0_30px_75px_-32px_rgba(20,52,92,0.48)] sm:p-9">
 
             {/* Background glow */}
 
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full bg-[#E9F3FF]/70 blur-3xl transition-all duration-500 group-hover:bg-[#DCEBFF]"
+              className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full bg-hxb-e9f3ff/70 blur-3xl transition-all duration-500 group-hover:bg-hxb-dcebff"
             />
 
             {/* Header */}
 
-            <div className="relative flex items-center gap-4 border-b border-[#EDF1F7] pb-7">
+            <div className="relative flex items-center gap-4 border-b border-hxl-edf1f7 pb-7">
 
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#286BC1] to-[#79B6FF] text-white shadow-[0_10px_25px_-8px_rgba(40,107,193,0.5)] transition-transform duration-500 motion-safe:group-hover:-rotate-3 motion-safe:group-hover:scale-105">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-hxg-79b6ff text-white shadow-[0_10px_25px_-8px_rgba(40,107,193,0.5)] transition-transform duration-500 motion-safe:group-hover:-rotate-3 motion-safe:group-hover:scale-105">
                 <UserRound size={26} strokeWidth={1.8} />
               </div>
 
-              <h2 className="text-xl font-extrabold tracking-tight text-[#102C57] sm:text-2xl">
+              <h2 className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
                 Account Information
               </h2>
 
@@ -197,18 +197,18 @@ export default function SettingsPage() {
 
               {/* Email */}
 
-              <div className="group/row flex items-center gap-4 rounded-2xl border border-[#EDF2F9] bg-[#F8FAFE] p-5 transition-all duration-300 hover:border-[#D4E5FA] hover:bg-[#F1F7FF]">
+              <div className="group/row flex items-center gap-4 rounded-2xl border border-hxl-edf2f9 bg-hxb-f8fafe p-5 transition-all duration-300 hover:border-hxl-d4e5fa hover:bg-hxb-f1f7ff">
 
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-[#6C91C3] shadow-sm transition-all duration-300 group-hover/row:bg-[#E4F0FF] group-hover/row:text-[#286BC1] motion-safe:group-hover/row:scale-105">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface text-hxt-6c91c3 shadow-sm transition-all duration-300 group-hover/row:bg-hxb-e4f0ff group-hover/row:text-brand motion-safe:group-hover/row:scale-105">
                   <Mail size={21} strokeWidth={1.8} />
                 </div>
 
                 <div className="min-w-0">
-                  <p className="text-xs font-medium text-[#8194AD]">
+                  <p className="text-xs font-medium text-hxt-8194ad">
                     Email Address
                   </p>
 
-                  <p className="mt-1 break-all text-[15px] font-bold text-[#102C57]">
+                  <p className="mt-1 break-all text-[15px] font-bold text-ink">
                     {user.email}
                   </p>
                 </div>
@@ -217,20 +217,20 @@ export default function SettingsPage() {
 
               {/* Account Role */}
 
-              <div className="group/row flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#EDF2F9] bg-[#F8FAFE] p-5 transition-all duration-300 hover:border-[#D4E5FA] hover:bg-[#F1F7FF]">
+              <div className="group/row flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-hxl-edf2f9 bg-hxb-f8fafe p-5 transition-all duration-300 hover:border-hxl-d4e5fa hover:bg-hxb-f1f7ff">
 
                 <div className="flex items-center gap-4">
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-[#6C91C3] shadow-sm transition-all duration-300 group-hover/row:bg-[#E4F0FF] group-hover/row:text-[#286BC1] motion-safe:group-hover/row:scale-105">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface text-hxt-6c91c3 shadow-sm transition-all duration-300 group-hover/row:bg-hxb-e4f0ff group-hover/row:text-brand motion-safe:group-hover/row:scale-105">
                     <ShieldCheck size={21} strokeWidth={1.8} />
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-[#8194AD]">
+                    <p className="text-xs font-medium text-hxt-8194ad">
                       Account Role
                     </p>
 
-                    <p className="mt-1 text-[15px] font-bold capitalize text-[#102C57]">
+                    <p className="mt-1 text-[15px] font-bold capitalize text-ink">
                       {user.role}
                     </p>
                   </div>
@@ -239,7 +239,7 @@ export default function SettingsPage() {
 
                 <Link
                   href="/profile"
-                  className="group/link inline-flex min-h-10 items-center gap-2 rounded-xl border border-[#D9E8FB] bg-white px-4 text-sm font-bold text-[#286BC1] transition-all duration-300 hover:border-[#A8CDF7] hover:bg-[#EAF4FF]"
+                  className="group/link inline-flex min-h-10 items-center gap-2 rounded-xl border border-hxl-d9e8fb bg-surface px-4 text-sm font-bold text-brand transition-all duration-300 hover:border-hxl-a8cdf7 hover:bg-tint"
                 >
                   Edit Profile
 
@@ -257,24 +257,24 @@ export default function SettingsPage() {
 
           {/* ================= SECURITY & SESSION ================= */}
 
-          <section className="settings-enter-delayed group relative overflow-hidden rounded-[30px] border border-[#E3EBF7] bg-white p-6 shadow-[0_20px_60px_-35px_rgba(20,52,92,0.24)] transition-all duration-500 hover:shadow-[0_25px_70px_-35px_rgba(20,52,92,0.34)] sm:p-9">
+          <section className="settings-enter-delayed group relative overflow-hidden rounded-[30px] border border-hxl-e3ebf7 bg-surface p-6 shadow-[0_20px_60px_-35px_rgba(20,52,92,0.24)] transition-all duration-500 hover:shadow-[0_25px_70px_-35px_rgba(20,52,92,0.34)] sm:p-9">
 
             {/* Top gradient */}
 
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2F77D2] via-[#79B5FF] to-transparent"
+              className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-hxg-2f77d2 via-hxg-79b5ff to-transparent"
             />
 
             {/* Header */}
 
-            <div className="flex items-center gap-4 border-b border-[#EDF1F7] pb-7">
+            <div className="flex items-center gap-4 border-b border-hxl-edf1f7 pb-7">
 
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#EDF5FF] text-[#286BC1] shadow-sm">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-hxb-edf5ff text-brand shadow-sm">
                 <ShieldCheck size={26} strokeWidth={1.8} />
               </div>
 
-              <h2 className="text-xl font-extrabold tracking-tight text-[#102C57] sm:text-2xl">
+              <h2 className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
                 Security & Session
               </h2>
 
@@ -282,19 +282,19 @@ export default function SettingsPage() {
 
             {/* Password management */}
 
-            <div className="group/password mt-7 flex items-start gap-4 rounded-[22px] border border-[#E5EDF8] bg-gradient-to-br from-[#F7FAFF] to-[#EFF6FF] p-5 transition-all duration-300 hover:border-[#C9DFF8] hover:shadow-[0_12px_30px_-20px_rgba(40,107,193,0.3)] sm:p-6">
+            <div className="group/password mt-7 flex items-start gap-4 rounded-[22px] border border-hxl-e5edf8 bg-gradient-to-br from-canvas to-hxg-eff6ff p-5 transition-all duration-300 hover:border-hxl-c9dff8 hover:shadow-[0_12px_30px_-20px_rgba(40,107,193,0.3)] sm:p-6">
 
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#286BC1] shadow-[0_6px_15px_-8px_rgba(40,107,193,0.4)] transition-transform duration-300 motion-safe:group-hover/password:-rotate-6">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-surface text-brand shadow-[0_6px_15px_-8px_rgba(40,107,193,0.4)] transition-transform duration-300 motion-safe:group-hover/password:-rotate-6">
                 <KeyRound size={23} strokeWidth={1.8} />
               </div>
 
               <div className="min-w-0">
 
-                <h3 className="text-base font-bold text-[#102C57]">
+                <h3 className="text-base font-bold text-ink">
                   Password Management
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[#667B98]">
+                <p className="mt-3 text-sm leading-7 text-hxt-667b98">
                   Password changes are not available from the
                   dashboard yet. This feature requires a
                   secure backend password-change endpoint.
@@ -306,16 +306,16 @@ export default function SettingsPage() {
 
             {/* Sign out */}
 
-            <div className="mt-9 border-t border-[#EDF1F7] pt-8">
+            <div className="mt-9 border-t border-hxl-edf1f7 pt-8">
 
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
                 <div>
-                  <h3 className="text-lg font-bold text-[#102C57]">
+                  <h3 className="text-lg font-bold text-ink">
                     Sign Out
                   </h3>
 
-                  <p className="mt-2 text-sm leading-7 text-[#667B98]">
+                  <p className="mt-2 text-sm leading-7 text-hxt-667b98">
                     End your current browser session on Learnify.
                   </p>
                 </div>

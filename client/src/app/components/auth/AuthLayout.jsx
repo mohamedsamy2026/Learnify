@@ -21,7 +21,7 @@ export default function AuthLayout({
   const isLogin = mode === "login";
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#F7FAFF]">
+    <main className="relative min-h-screen overflow-hidden bg-canvas">
       <div className="mx-auto grid min-h-[calc(100vh-112px)] max-w-[1600px] lg:grid-cols-[48%_52%]">
 
         {/* ================= FORM SIDE ================= */}
@@ -31,20 +31,20 @@ export default function AuthLayout({
           {/* Background decorations */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-[#DCEBFF]/60 blur-[100px]"
+            className="pointer-events-none absolute -left-40 -top-40 h-[400px] w-[400px] rounded-full bg-hxb-dcebff/60 blur-[100px]"
           />
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-40 right-0 h-[350px] w-[350px] rounded-full bg-[#E4F2FF]/70 blur-[100px]"
+            className="pointer-events-none absolute -bottom-40 right-0 h-[350px] w-[350px] rounded-full bg-hxb-e4f2ff/70 blur-[100px]"
           />
 
           <div className="auth-content-enter relative z-10 w-full max-w-[430px]">
 
             {/* Small brand mark */}
 
-            <div className="mb-9 inline-flex items-center gap-2.5 rounded-full border border-[#D6E7FC] bg-white/90 px-4 py-2.5 text-[13px] font-semibold text-[#286BC1] shadow-[0_8px_24px_-15px_rgba(40,107,193,0.25)] backdrop-blur-md">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E8F2FF]">
+            <div className="mb-9 inline-flex items-center gap-2.5 rounded-full border border-hxl-d6e7fc bg-surface/90 px-4 py-2.5 text-[13px] font-semibold text-brand shadow-[0_8px_24px_-15px_rgba(40,107,193,0.25)] backdrop-blur-md">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-hxb-e8f2ff">
                 <GraduationCap size={16} />
               </span>
 
@@ -53,11 +53,11 @@ export default function AuthLayout({
 
             {/* Heading */}
 
-            <h1 className="text-[42px] font-extrabold leading-[1.12] tracking-[-0.055em] text-[#102C57] sm:text-[52px]">
+            <h1 className="text-[42px] font-extrabold leading-[1.12] tracking-[-0.055em] text-ink sm:text-[52px]">
               {title}
             </h1>
 
-            <p className="mt-5 max-w-md text-[15px] leading-8 text-[#71839D]">
+            <p className="mt-5 max-w-md text-[15px] leading-8 text-hxt-71839d">
               {description}
             </p>
 
@@ -69,14 +69,14 @@ export default function AuthLayout({
 
             {/* Auth switch */}
 
-            <p className="mt-9 text-center text-sm text-[#71839D]">
+            <p className="mt-9 text-center text-sm text-hxt-71839d">
               {isLogin
                 ? "New to Learnify?"
                 : "Already have an account?"}{" "}
 
               <Link
                 href={isLogin ? "/register" : "/login"}
-                className="group/link inline-flex items-center gap-1 font-bold text-[#286BC1] transition-colors hover:text-[#174F9C]"
+                className="group/link inline-flex items-center gap-1 font-bold text-brand transition-colors hover:text-hxt-174f9c"
               >
                 {isLogin ? "Create an account" : "Log in"}
 
@@ -91,16 +91,16 @@ export default function AuthLayout({
 
         {/* ================= VISUAL SIDE ================= */}
 
-        <section className="auth-visual relative hidden min-h-[760px] flex-col justify-between overflow-hidden bg-[#174A98] p-10 text-white lg:flex xl:p-14">
+        <section className="auth-visual relative hidden min-h-[760px] flex-col justify-between overflow-hidden bg-hxb-174a98 p-10 text-white lg:flex xl:p-14">
 
           {/* Animated gradient background */}
-          <div className="auth-gradient pointer-events-none absolute inset-0 bg-gradient-to-br from-[#83C5FF] via-[#347FDE] to-[#102C64]" />
+          <div className="auth-gradient pointer-events-none absolute inset-0 bg-gradient-to-br from-hxg-83c5ff via-hxg-347fde to-hxg-102c64" />
 
           {/* Light glows */}
 
-          <div className="auth-glow-one pointer-events-none absolute -right-48 -top-48 h-[650px] w-[650px] rounded-full bg-[#A7DDFF]/30 blur-[100px]" />
+          <div className="auth-glow-one pointer-events-none absolute -right-48 -top-48 h-[650px] w-[650px] rounded-full bg-hxb-a7ddff/30 blur-[100px]" />
 
-          <div className="auth-glow-two pointer-events-none absolute -bottom-56 -left-32 h-[550px] w-[550px] rounded-full bg-[#102D70]/60 blur-[110px]" />
+          <div className="auth-glow-two pointer-events-none absolute -bottom-56 -left-32 h-[550px] w-[550px] rounded-full bg-hxb-102d70/60 blur-[110px]" />
 
           {/* Background grid */}
 
@@ -158,7 +158,7 @@ export default function AuthLayout({
 
               {/* Main glow */}
 
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#A8DCFF]/35 blur-[75px]" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-hxb-a8dcff/35 blur-[75px]" />
 
               {/* Orbit */}
 
@@ -173,13 +173,13 @@ export default function AuthLayout({
                   <div className="auth-book relative h-full w-full">
 
                     {/* Book pages */}
-                    <div className="absolute inset-y-[8px] -right-[11px] w-[28px] rounded-r-[12px] border border-[#BEDCF5] bg-gradient-to-r from-[#C4DDF3] via-white to-[#D7E9F8] shadow-[8px_10px_25px_rgba(10,35,85,0.2)]" />
+                    <div className="absolute inset-y-[8px] -right-[11px] w-[28px] rounded-r-[12px] border border-hxl-bedcf5 bg-gradient-to-r from-hxg-c4ddf3 via-white to-hxg-d7e9f8 shadow-[8px_10px_25px_rgba(10,35,85,0.2)]" />
 
                     {/* Book spine */}
-                    <div className="absolute -left-[10px] inset-y-[5px] w-[24px] rounded-l-xl bg-gradient-to-r from-[#0C3678] to-[#2768C1] shadow-xl" />
+                    <div className="absolute -left-[10px] inset-y-[5px] w-[24px] rounded-l-xl bg-gradient-to-r from-hxg-0c3678 to-hxg-2768c1 shadow-xl" />
 
                     {/* Cover */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-[20px] border border-white/40 bg-gradient-to-br from-[#E8F5FF] via-[#B9DCFF] to-[#74B1F3] shadow-[25px_35px_65px_rgba(8,29,75,0.4)]">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-[20px] border border-white/40 bg-gradient-to-br from-hxg-e8f5ff via-hxg-b9dcff to-hxg-74b1f3 shadow-[25px_35px_65px_rgba(8,29,75,0.4)]">
 
                       {/* Cover decoration */}
                       <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full border-[28px] border-white/20" />
@@ -189,7 +189,7 @@ export default function AuthLayout({
                       <div className="absolute inset-[11px] rounded-[13px] border border-white/40" />
 
                       {/* Center graphic */}
-                      <div className="relative flex h-[85px] w-[85px] items-center justify-center rounded-[26px] border border-white/50 bg-white/75 text-[#286BC1] shadow-[0_15px_30px_-12px_rgba(40,107,193,0.4)] backdrop-blur-md">
+                      <div className="relative flex h-[85px] w-[85px] items-center justify-center rounded-[26px] border border-white/50 bg-white/75 text-brand shadow-[0_15px_30px_-12px_rgba(40,107,193,0.4)] backdrop-blur-md">
                         <BookOpen
                           size={46}
                           strokeWidth={1.5}
@@ -197,11 +197,11 @@ export default function AuthLayout({
                       </div>
 
                       <div className="relative mt-5 text-center">
-                        <p className="text-xl font-extrabold tracking-tight text-[#164B90]">
+                        <p className="text-xl font-extrabold tracking-tight text-hxt-164b90">
                           Learnify
                         </p>
 
-                        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-[#347FD8]/35" />
+                        <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-hxb-347fd8/35" />
                       </div>
                     </div>
                   </div>
@@ -212,9 +212,9 @@ export default function AuthLayout({
 
               <div className="auth-float-one absolute left-0 top-[13%] z-30 sm:left-[3%]">
 
-                <div className="auth-glass-card flex items-center gap-3 rounded-2xl border border-white/35 bg-white/90 px-4 py-3 text-[#173D78] shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
+                <div className="auth-glass-card flex items-center gap-3 rounded-2xl border border-white/35 bg-surface/90 px-4 py-3 text-hxt-173d78 shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E7F1FF] text-[#286BC1]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-hxb-e7f1ff text-brand">
                     <GraduationCap size={23} />
                   </div>
 
@@ -222,7 +222,7 @@ export default function AuthLayout({
                     <p className="text-[13px] font-extrabold">
                       Start Learning
                     </p>
-                    <p className="mt-0.5 text-[10px] font-medium text-[#7590B0]">
+                    <p className="mt-0.5 text-[10px] font-medium text-hxt-7590b0">
                       Explore new skills
                     </p>
                   </div>
@@ -233,9 +233,9 @@ export default function AuthLayout({
 
               <div className="auth-float-two absolute -right-1 top-[21%] z-30 sm:right-[1%]">
 
-                <div className="auth-glass-card flex items-center gap-3 rounded-2xl border border-white/35 bg-white/90 px-4 py-3 text-[#173D78] shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
+                <div className="auth-glass-card flex items-center gap-3 rounded-2xl border border-white/35 bg-surface/90 px-4 py-3 text-hxt-173d78 shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#E8F7EF] text-[#259568]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-hxb-e8f7ef text-hxt-259568">
                     <CheckCircle2 size={22} />
                   </div>
 
@@ -243,7 +243,7 @@ export default function AuthLayout({
                     <p className="text-[13px] font-extrabold">
                       Keep Growing
                     </p>
-                    <p className="mt-0.5 text-[10px] font-medium text-[#7590B0]">
+                    <p className="mt-0.5 text-[10px] font-medium text-hxt-7590b0">
                       Every step counts
                     </p>
                   </div>
@@ -254,9 +254,9 @@ export default function AuthLayout({
 
               <div className="auth-float-three absolute bottom-[12%] left-[1%] z-30">
 
-                <div className="auth-glass-card flex items-center gap-2.5 rounded-2xl border border-white/35 bg-white/90 px-4 py-3 text-[#173D78] shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
+                <div className="auth-glass-card flex items-center gap-2.5 rounded-2xl border border-white/35 bg-surface/90 px-4 py-3 text-hxt-173d78 shadow-[0_18px_40px_-15px_rgba(10,34,85,0.45)] backdrop-blur-xl">
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF1CF] text-[#D49A28]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-hxb-fff1cf text-hxt-d49a28">
                     <Star size={21} fill="currentColor" />
                   </div>
 
@@ -268,7 +268,7 @@ export default function AuthLayout({
 
               {/* ================= FLOATING ICONS ================= */}
 
-              <div className="auth-float-four absolute bottom-[10%] right-[5%] z-30 flex h-14 w-14 rotate-12 items-center justify-center rounded-2xl border border-white/30 bg-[#9CD3FF]/80 text-[#174C90] shadow-xl backdrop-blur-xl">
+              <div className="auth-float-four absolute bottom-[10%] right-[5%] z-30 flex h-14 w-14 rotate-12 items-center justify-center rounded-2xl border border-white/30 bg-hxb-9cd3ff/80 text-hxt-174c90 shadow-xl backdrop-blur-xl">
                 <Layers3 size={27} />
               </div>
 
@@ -276,7 +276,7 @@ export default function AuthLayout({
                 <Sparkles size={23} />
               </div>
 
-              <div className="auth-sparkle-delayed absolute bottom-[27%] left-[20%] text-[#D8EEFF]">
+              <div className="auth-sparkle-delayed absolute bottom-[27%] left-[20%] text-hxt-d8eeff">
                 <Star size={15} fill="currentColor" />
               </div>
 
@@ -292,7 +292,7 @@ export default function AuthLayout({
                   <>
                     Welcome Back to
 
-                    <span className="block text-[#D5EDFF]">
+                    <span className="block text-hxt-d5edff">
                       Your Future.
                     </span>
                   </>
@@ -300,7 +300,7 @@ export default function AuthLayout({
                   <>
                     Your Brighter
 
-                    <span className="block text-[#D5EDFF]">
+                    <span className="block text-hxt-d5edff">
                       Tomorrow Starts Here.
                     </span>
                   </>
@@ -308,7 +308,7 @@ export default function AuthLayout({
 
               </h2>
 
-              <p className="mt-6 max-w-[450px] text-[16px] leading-8 text-[#E2F0FF]">
+              <p className="mt-6 max-w-[450px] text-[16px] leading-8 text-hxt-e2f0ff">
                 Discover courses, build real-world skills,
                 and keep moving toward your goals.
               </p>
@@ -344,7 +344,7 @@ export default function AuthLayout({
             </p>
 
             <div className="flex items-center gap-1.5">
-              <span className="h-1.5 w-6 rounded-full bg-white/80" />
+              <span className="h-1.5 w-6 rounded-full bg-surface/80" />
               <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
               <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
             </div>

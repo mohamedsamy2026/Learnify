@@ -41,8 +41,8 @@ export default function AccountNavigation({ role }) {
       className="
         group relative overflow-hidden
         rounded-[28px]
-        border border-[#E1EAF7]
-        bg-white
+        border border-hxl-e1eaf7
+        bg-surface
         p-3
         shadow-[0_15px_50px_-20px_rgba(39,103,189,0.18)]
         transition-all duration-500
@@ -56,9 +56,9 @@ export default function AccountNavigation({ role }) {
         className="
           absolute inset-x-0 top-0 h-[3px]
           bg-gradient-to-r
-          from-[#3478D4]
-          via-[#73B3FF]
-          to-[#C4DFFF]
+          from-brand-light
+          via-hxg-73b3ff
+          to-hxg-c4dfff
         "
       />
 
@@ -69,10 +69,10 @@ export default function AccountNavigation({ role }) {
           pointer-events-none
           absolute -right-20 -top-24
           h-52 w-52 rounded-full
-          bg-[#DCEBFF]/60
+          bg-hxb-dcebff/60
           blur-[65px]
           transition-all duration-700
-          group-hover:bg-[#C9E2FF]/80
+          group-hover:bg-hxb-c9e2ff/80
         "
       />
 
@@ -84,8 +84,8 @@ export default function AccountNavigation({ role }) {
             items-center justify-center
             rounded-2xl
             bg-gradient-to-br
-            from-[#3478D4]
-            to-[#74B1FF]
+            from-brand-light
+            to-hxg-74b1ff
             text-white
             shadow-[0_8px_20px_-6px_rgba(52,120,212,0.5)]
             transition-transform duration-500
@@ -97,11 +97,11 @@ export default function AccountNavigation({ role }) {
         </div>
 
         <div>
-          <h2 className="text-[17px] font-bold tracking-tight text-[#203B60]">
+          <h2 className="text-[17px] font-bold tracking-tight text-hxt-203b60">
             My Account
           </h2>
 
-          <div className="mt-2 h-[3px] w-9 rounded-full bg-gradient-to-r from-[#3478D4] to-[#9EC9FF]" />
+          <div className="mt-2 h-[3px] w-9 rounded-full bg-gradient-to-r from-brand-light to-hxg-9ec9ff" />
         </div>
       </div>
 
@@ -119,7 +119,7 @@ export default function AccountNavigation({ role }) {
               {index === 2 && (
                 <div
                   aria-hidden="true"
-                  className="mx-3 my-4 h-px bg-gradient-to-r from-transparent via-[#DFE8F5] to-transparent"
+                  className="mx-3 my-4 h-px bg-gradient-to-r from-transparent via-hxg-dfe8f5 to-transparent"
                 />
               )}
 
@@ -140,16 +140,16 @@ export default function AccountNavigation({ role }) {
                     active
                       ? `
                         bg-gradient-to-r
-                        from-[#E8F2FF]
-                        via-[#F0F7FF]
-                        to-[#F8FBFF]
-                        text-[#286BC1]
+                        from-hxg-e8f2ff
+                        via-hxg-f0f7ff
+                        to-hxg-f8fbff
+                        text-brand
                         shadow-[inset_0_0_0_1px_rgba(52,120,212,0.10)]
                       `
                       : `
-                        text-[#63758F]
-                        hover:bg-[#F4F8FF]
-                        hover:text-[#286BC1]
+                        text-hxt-63758f
+                        hover:bg-hxb-f4f8ff
+                        hover:text-brand
                         hover:shadow-[0_8px_20px_-10px_rgba(39,103,189,0.20)]
                       `
                   }
@@ -164,8 +164,8 @@ export default function AccountNavigation({ role }) {
                       w-[3px]
                       rounded-r-full
                       bg-gradient-to-b
-                      from-[#3478D4]
-                      to-[#80BCFF]
+                      from-brand-light
+                      to-hxg-80bcff
                       shadow-[0_0_12px_rgba(52,120,212,0.35)]
                     "
                   />
@@ -184,15 +184,15 @@ export default function AccountNavigation({ role }) {
                     ${
                       active
                         ? `
-                          bg-white
-                          text-[#3478D4]
+                          bg-surface
+                          text-brand-light
                           shadow-[0_4px_12px_rgba(52,120,212,0.12)]
                         `
                         : `
-                          bg-[#F0F5FC]
-                          text-[#7589A5]
-                          group-hover/item:bg-[#E6F1FF]
-                          group-hover/item:text-[#3478D4]
+                          bg-hxb-f0f5fc
+                          text-hxt-7589a5
+                          group-hover/item:bg-hxb-e6f1ff
+                          group-hover/item:text-brand-light
                         `
                     }
                   `}
@@ -215,8 +215,8 @@ export default function AccountNavigation({ role }) {
                     transition-all duration-300
                     ${
                       active
-                        ? "scale-100 bg-[#3478D4]"
-                        : "scale-0 bg-[#8EBEFF] group-hover/item:scale-100"
+                        ? "scale-100 bg-brand-light"
+                        : "scale-0 bg-hxb-8ebeff group-hover/item:scale-100"
                     }
                   `}
                 />
@@ -236,7 +236,7 @@ export default function AccountNavigation({ role }) {
           rounded-full
           bg-gradient-to-r
           from-transparent
-          via-[#C5DAF5]
+          via-hxg-c5daf5
           to-transparent
         "
       />

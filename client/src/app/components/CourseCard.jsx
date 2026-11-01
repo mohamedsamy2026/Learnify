@@ -14,15 +14,15 @@ export default function CourseCard({ course }) {
     <Link
       href={`/courses/${id}`}
       className="
-        group/card relative isolate block
+        lift group/card relative isolate block
         h-[350px] w-full overflow-hidden
-        rounded-3xl bg-[#12386F]
+        rounded-3xl bg-ink-soft
         shadow-[0_10px_30px_-18px_rgba(15,42,74,0.5)]
         transition-shadow duration-300
         hover:shadow-[0_20px_44px_-20px_rgba(15,42,74,0.6)]
         focus-visible:outline-none
         focus-visible:ring-2
-        focus-visible:ring-[#2563B8]
+        focus-visible:ring-brand
         focus-visible:ring-offset-4
         sm:h-[370px]
       "
@@ -42,7 +42,7 @@ export default function CourseCard({ course }) {
           }}
         />
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#4A9AF0] to-[#12386F]">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-hxg-4a9af0 to-ink-soft">
           <BookOpen
             size={80}
             strokeWidth={1.3}
@@ -58,8 +58,8 @@ export default function CourseCard({ course }) {
         className="
           pointer-events-none absolute inset-0
           bg-gradient-to-t
-          from-[#071A39]/90
-          via-[#0A2A57]/35
+          from-hxg-071a39/90
+          via-hxg-0a2a57/35
           to-transparent
         "
       />
@@ -67,7 +67,7 @@ export default function CourseCard({ course }) {
       {/* ================= TOP ROW ================= */}
 
       <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-5">
-        <span className="inline-flex max-w-[75%] items-center rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-bold text-[#12386F]">
+        <span className="inline-flex max-w-[75%] items-center rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-bold text-ink-soft">
           <span className="truncate">
             {course.category || "Course"}
           </span>
@@ -80,8 +80,8 @@ export default function CourseCard({ course }) {
             rounded-xl bg-white/20 text-white
             backdrop-blur-md
             transition-colors duration-200
-            group-hover/card:bg-white
-            group-hover/card:text-[#2563B8]
+            group-hover/card:bg-surface
+            group-hover/card:text-brand
           "
         >
           <ArrowUpRight size={20} strokeWidth={2} />
@@ -101,11 +101,17 @@ export default function CourseCard({ course }) {
         />
 
         <div className="mt-4 flex items-center justify-between gap-3">
-          <span className="min-w-0 truncate text-[13px] font-medium text-[#CFE4FF]">
+          <span className="min-w-0 truncate text-[13px] font-medium text-hxt-cfe4ff">
             {course.level || "All levels"}
           </span>
 
-          <span className="inline-flex shrink-0 items-center justify-center rounded-full bg-white/20 px-3.5 py-1.5 text-[13px] font-bold text-white backdrop-blur-md">
+          <span
+            className={`inline-flex shrink-0 items-center justify-center rounded-full px-3.5 py-1.5 text-[13px] font-bold backdrop-blur-md ${
+              price === 0
+                ? "bg-accent text-ink"
+                : "bg-white/20 text-white"
+            }`}
+          >
             {price === 0
               ? "Free"
               : `$${price.toFixed(2)}`}

@@ -19,9 +19,9 @@ export default function InstructorCourseCard({
   return (
     <article
       className="
-        group/card flex h-full flex-col
+        lift group/card flex h-full flex-col
         overflow-hidden rounded-3xl
-        border border-[#DFE8F3] bg-white
+        border border-line bg-surface
         shadow-[0_10px_30px_-22px_rgba(15,42,74,0.3)]
         transition-shadow duration-300
         hover:shadow-[0_20px_44px_-24px_rgba(15,42,74,0.4)]
@@ -29,7 +29,7 @@ export default function InstructorCourseCard({
     >
       {/* IMAGE SECTION */}
 
-      <div className="relative h-48 shrink-0 overflow-hidden bg-gradient-to-br from-[#6FB3F5] to-[#1B4B87]">
+      <div className="relative h-48 shrink-0 overflow-hidden bg-gradient-to-br from-hxg-6fb3f5 to-hxg-1b4b87">
 
         {course.thumbnail_url ? (
           <img
@@ -48,7 +48,7 @@ export default function InstructorCourseCard({
         )}
 
         {/* PRICE BADGE */}
-        <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-extrabold text-[#12386F]">
+        <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-extrabold text-ink-soft">
           {price === 0 ? "Free" : `$${price.toFixed(2)}`}
         </span>
       </div>
@@ -60,24 +60,24 @@ export default function InstructorCourseCard({
         {/* CATEGORY + LEVEL */}
         <div className="flex flex-wrap items-center justify-between gap-3">
 
-          <span className="inline-flex max-w-full items-center rounded-full bg-[#EAF2FC] px-3 py-1 text-xs font-bold text-[#2563B8]">
+          <span className="inline-flex max-w-full items-center rounded-full bg-tint px-3 py-1 text-xs font-bold text-brand">
             <span className="truncate">
               {course.category || "General"}
             </span>
           </span>
 
-          <span className="text-xs font-semibold capitalize text-[#7C8DA6]">
+          <span className="text-xs font-semibold capitalize text-subtle">
             {course.level || "Beginner"}
           </span>
         </div>
 
         {/* COURSE NAME */}
-        <h3 className="mt-4 line-clamp-2 min-h-[56px] text-[20px] font-extrabold leading-[1.4] tracking-tight text-[#0F2A4A]">
+        <h3 className="mt-4 line-clamp-2 min-h-[56px] text-[20px] font-extrabold leading-[1.4] tracking-tight text-ink">
           {course.coursename}
         </h3>
 
         {/* DESCRIPTION */}
-        <p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-[#64768F]">
+        <p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-muted">
           {course.description || "No description added yet."}
         </p>
 
@@ -85,7 +85,7 @@ export default function InstructorCourseCard({
         <div className="flex-1" />
 
         {/* ACTIONS */}
-        <div className="mt-6 grid grid-cols-2 gap-3 border-t border-[#E8EFF8] pt-5">
+        <div className="mt-6 grid grid-cols-2 gap-3 border-t border-tint pt-5">
 
           {/* EDIT BUTTON */}
           <button
@@ -94,13 +94,13 @@ export default function InstructorCourseCard({
             className="
               inline-flex min-h-[44px]
               items-center justify-center gap-2
-              rounded-xl bg-[#EAF2FC]
-              px-3 text-sm font-bold text-[#2563B8]
+              rounded-xl bg-tint
+              px-3 text-sm font-bold text-brand
               transition-colors duration-200
-              hover:bg-[#DAE8F8]
+              hover:bg-hxb-dae8f8
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
             "
           >
             <Pencil size={16} />
@@ -146,15 +146,15 @@ export default function InstructorCourseCard({
             group/lessons mt-3
             inline-flex min-h-[46px] w-full
             items-center justify-center gap-2
-            rounded-xl border border-[#D3E2F4]
-            bg-white px-4 text-sm font-bold
-            text-[#0F2A4A]
+            rounded-xl border border-line-strong
+            bg-surface px-4 text-sm font-bold
+            text-ink
             transition-colors duration-200
-            hover:border-[#2563B8]
-            hover:text-[#2563B8]
+            hover:border-brand
+            hover:text-brand
             focus-visible:outline-none
             focus-visible:ring-2
-            focus-visible:ring-[#2563B8]
+            focus-visible:ring-brand
             focus-visible:ring-offset-2
           "
         >

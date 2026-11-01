@@ -251,7 +251,7 @@ export default function Navbar() {
             <motion.div
               layout
               transition={transition}
-              className="flex h-[68px] items-center justify-center gap-2 rounded-full border border-[#DCE7F5] bg-white/95 px-2 shadow-[0_8px_30px_rgba(15,42,74,0.10)] backdrop-blur-xl"
+              className="flex h-[68px] items-center justify-center gap-2 rounded-full border border-line bg-surface/95 px-2 shadow-[0_8px_30px_rgba(15,42,74,0.10)] backdrop-blur-xl"
             >
               {/* LEFT LINKS */}
               <AnimatePresence initial={false}>
@@ -296,7 +296,7 @@ export default function Navbar() {
                 href="/"
                 onClick={closeMenus}
                 aria-label="Learnify Home"
-                className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#2563B8] text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+                className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
               >
                 <GraduationCap
                   size={28}
@@ -339,10 +339,10 @@ export default function Navbar() {
                         />
                       ))}
 
-                      <div className="mx-2 h-6 w-px bg-[#DCE7F5]" />
+                      <div className="mx-2 h-6 w-px bg-line" />
 
                       {!authReady ? (
-                        <div className="h-10 w-20 animate-pulse rounded-full bg-[#EAF2FC]" />
+                        <div className="h-10 w-20 animate-pulse rounded-full bg-tint" />
                       ) : user ? (
                         <div className="relative">
                           <button
@@ -353,18 +353,18 @@ export default function Navbar() {
                             aria-label="Open account menu"
                             aria-expanded={isAccountOpen}
                             aria-haspopup="true"
-                            className={`flex h-11 items-center gap-2 rounded-full border px-1.5 pr-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] ${
+                            className={`flex h-11 items-center gap-2 rounded-full border px-1.5 pr-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                               isAccountOpen
-                                ? "border-[#2563B8] bg-[#EAF2FC]"
-                                : "border-[#DCE7F5] bg-white hover:bg-[#F3F8FE]"
+                                ? "border-brand bg-tint"
+                                : "border-line bg-surface hover:bg-tint-soft"
                             }`}
                           >
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2563B8] text-white">
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white">
                               <UserRound size={18} />
                             </span>
                             <ChevronDown
                               size={15}
-                              className={`text-[#55657C] transition-transform ${
+                              className={`text-muted transition-transform ${
                                 isAccountOpen ? "rotate-180" : ""
                               }`}
                             />
@@ -389,7 +389,7 @@ export default function Navbar() {
                                   scale: 0.97,
                                 }}
                                 transition={{ duration: 0.18 }}
-                                className="absolute right-0 top-[56px] z-50 w-72 overflow-hidden rounded-2xl border border-[#DCE7F5] bg-white p-2 shadow-[0_16px_44px_rgba(15,42,74,0.14)]"
+                                className="absolute right-0 top-[56px] z-50 w-72 overflow-hidden rounded-2xl border border-line bg-surface p-2 shadow-[0_16px_44px_rgba(15,42,74,0.14)]"
                               >
                                 <AccountMenu
                                   user={user}
@@ -407,7 +407,7 @@ export default function Navbar() {
                           <Link
                             href="/login"
                             onClick={closeMenus}
-                            className="rounded-full px-4 py-3 text-sm font-semibold text-[#0F2A4A] transition-colors hover:text-[#2563B8]"
+                            className="rounded-full px-4 py-3 text-sm font-semibold text-ink transition-colors hover:text-brand"
                           >
                             Log In
                           </Link>
@@ -415,7 +415,7 @@ export default function Navbar() {
                           <Link
                             href="/register"
                             onClick={closeMenus}
-                            className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#2563B8] px-5 text-sm font-semibold text-white transition-colors hover:bg-[#1D4F94]"
+                            className="inline-flex min-h-10 items-center gap-2 rounded-full bg-brand px-5 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
                           >
                             Get Started
                             <ArrowRight size={16} />
@@ -444,11 +444,11 @@ export default function Navbar() {
             }
             aria-expanded={isMobileOpen}
             aria-controls="learnify-mobile-menu"
-            className="relative flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-white bg-[#2563B8] text-white shadow-[0_8px_24px_rgba(15,42,74,0.20)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+            className="relative flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-white bg-brand text-white shadow-[0_8px_24px_rgba(15,42,74,0.20)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
           >
             <GraduationCap size={29} strokeWidth={2} />
 
-            <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-[#0F2A4A] text-white">
+            <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full border-2 border-surface bg-navy text-white">
               {isMobileOpen ? (
                 <X size={13} />
               ) : (
@@ -480,7 +480,7 @@ export default function Navbar() {
                 transition={{
                   duration: reduceMotion ? 0 : 0.22,
                 }}
-                className="absolute left-1/2 top-[76px] w-[min(350px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-3xl border border-[#DCE7F5] bg-white p-3 shadow-[0_16px_44px_rgba(15,42,74,0.14)]"
+                className="absolute left-1/2 top-[76px] w-[min(350px,calc(100vw-32px))] -translate-x-1/2 overflow-hidden rounded-3xl border border-line bg-surface p-3 shadow-[0_16px_44px_rgba(15,42,74,0.14)]"
               >
                 <div className="flex flex-col gap-1">
                   {navigationLinks.map((link) => {
@@ -499,8 +499,8 @@ export default function Navbar() {
                         }
                         className={`rounded-xl px-5 py-3 text-center text-sm font-semibold transition-colors ${
                           active
-                            ? "bg-[#2563B8] text-white"
-                            : "text-[#0F2A4A] hover:bg-[#EEF5FD]"
+                            ? "bg-brand text-white"
+                            : "text-ink hover:bg-hxb-eef5fd"
                         }`}
                       >
                         {link.label}
@@ -510,7 +510,7 @@ export default function Navbar() {
                 </div>
 
                 {authReady && user ? (
-                  <div className="mt-3 border-t border-[#E5EDF8] pt-3">
+                  <div className="mt-3 border-t border-hxl-e5edf8 pt-3">
                     <AccountMenu
                       user={user}
                       links={accountLinks}
@@ -520,11 +520,11 @@ export default function Navbar() {
                     />
                   </div>
                 ) : authReady ? (
-                  <div className="mt-3 grid grid-cols-2 gap-2 border-t border-[#E5EDF8] pt-3">
+                  <div className="mt-3 grid grid-cols-2 gap-2 border-t border-hxl-e5edf8 pt-3">
                     <Link
                       href="/login"
                       onClick={closeMenus}
-                      className="rounded-xl bg-[#EAF2FC] px-4 py-3 text-center text-sm font-semibold text-[#0F2A4A] transition-colors hover:bg-[#DDEAF9]"
+                      className="rounded-xl bg-tint px-4 py-3 text-center text-sm font-semibold text-ink transition-colors hover:bg-hxb-ddeaf9"
                     >
                       Log In
                     </Link>
@@ -532,13 +532,13 @@ export default function Navbar() {
                     <Link
                       href="/register"
                       onClick={closeMenus}
-                      className="rounded-xl bg-[#2563B8] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#1D4F94]"
+                      className="rounded-xl bg-brand px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
                     >
                       Get Started
                     </Link>
                   </div>
                 ) : (
-                  <div className="mt-3 h-12 animate-pulse rounded-xl bg-[#EAF2FC]" />
+                  <div className="mt-3 h-12 animate-pulse rounded-xl bg-tint" />
                 )}
               </motion.div>
             )}
@@ -559,21 +559,21 @@ function AccountMenu({
   return (
     <div>
       {/* USER INFORMATION */}
-      <div className="flex items-center gap-3 rounded-xl bg-[#F3F8FE] p-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2563B8] text-white">
+      <div className="flex items-center gap-3 rounded-xl bg-tint-soft p-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-white">
           <UserRound size={20} />
         </span>
 
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-bold text-[#0F2A4A]">
+          <p className="truncate text-sm font-bold text-ink">
             {user.name || "Learnify User"}
           </p>
 
-          <p className="truncate text-xs text-[#64768F]">
+          <p className="truncate text-xs text-muted">
             {user.email || ""}
           </p>
 
-          <p className="mt-0.5 text-[11px] font-semibold capitalize text-[#2563B8]">
+          <p className="mt-0.5 text-[11px] font-semibold capitalize text-brand">
             {user.role || "Member"}
           </p>
         </div>
@@ -592,8 +592,8 @@ function AccountMenu({
               aria-current={active ? "page" : undefined}
               className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
                 active
-                  ? "bg-[#EAF2FC] text-[#2563B8]"
-                  : "text-[#55657C] hover:bg-[#F3F8FE] hover:text-[#0F2A4A]"
+                  ? "bg-tint text-brand"
+                  : "text-muted hover:bg-tint-soft hover:text-ink"
               }`}
             >
               <Icon size={18} />
@@ -604,7 +604,7 @@ function AccountMenu({
       </div>
 
       {/* LOGOUT */}
-      <div className="border-t border-[#E5EDF8] pt-2">
+      <div className="border-t border-hxl-e5edf8 pt-2">
         <button
           type="button"
           onClick={onLogout}
@@ -646,14 +646,14 @@ function DesktopLink({
       className={`relative flex min-h-10 items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
         showPill
           ? "text-white"
-          : "text-[#0F2A4A] hover:text-[#2563B8]"
+          : "text-ink hover:text-brand"
       }`}
     >
       {showPill && (
         <motion.span
           layoutId="learnify-active-pill"
           transition={transition}
-          className="absolute inset-0 rounded-full bg-[#2563B8]"
+          className="absolute inset-0 rounded-full bg-brand"
           aria-hidden="true"
         />
       )}

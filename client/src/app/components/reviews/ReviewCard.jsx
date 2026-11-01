@@ -16,11 +16,11 @@ export default function ReviewCard({
   const rating = Number(review.rating) || 0;
 
   return (
-    <article className="rounded-2xl border border-[#DFE8F3] bg-white p-5 sm:p-6">
+    <article className="rounded-2xl border border-line bg-surface p-5 sm:p-6">
       <div className="flex items-start gap-4">
 
         {/* Avatar */}
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAF2FC] text-[#2563B8]">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tint text-brand">
           <UserRound size={22} strokeWidth={1.8} />
         </div>
 
@@ -32,7 +32,7 @@ export default function ReviewCard({
             <div className="min-w-0">
 
               {/* Student name */}
-              <p className="break-words text-[15px] font-extrabold text-[#0F2A4A] sm:text-base">
+              <p className="break-words text-[15px] font-extrabold text-ink sm:text-base">
                 {review.name ||
                   review.username ||
                   "Learnify Student"}
@@ -51,7 +51,7 @@ export default function ReviewCard({
                     className={
                       value <= rating
                         ? "fill-amber-400 text-amber-400"
-                        : "text-[#C9D6E6]"
+                        : "text-hxt-c9d6e6"
                     }
                   />
                 ))}
@@ -70,13 +70,13 @@ export default function ReviewCard({
                   className="
                     flex h-10 w-10
                     items-center justify-center
-                    rounded-xl bg-[#EAF2FC]
-                    text-[#2563B8]
+                    rounded-xl bg-tint
+                    text-brand
                     transition-colors duration-200
-                    hover:bg-[#DAE8F8]
+                    hover:bg-hxb-dae8f8
                     focus-visible:outline-none
                     focus-visible:ring-2
-                    focus-visible:ring-[#2563B8]
+                    focus-visible:ring-brand
                   "
                 >
                   <Pencil size={17} />
@@ -117,7 +117,7 @@ export default function ReviewCard({
 
           {/* Review comment */}
           {review.comment && (
-            <p className="mt-4 whitespace-pre-line break-words text-[14px] leading-7 text-[#55657C] sm:text-[15px]">
+            <p className="mt-4 whitespace-pre-line break-words text-[14px] leading-7 text-muted sm:text-[15px]">
               {review.comment}
             </p>
           )}

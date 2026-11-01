@@ -56,12 +56,12 @@ export default function ReviewForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-[#DFE8F3] bg-[#F9FBFE] p-5 sm:p-7"
+      className="rounded-3xl border border-line bg-hxb-f9fbfe p-5 sm:p-7"
     >
       {/* HEADER */}
-      <div className="flex items-start justify-between gap-4 border-b border-[#E5EDF7] pb-5">
+      <div className="flex items-start justify-between gap-4 border-b border-hxl-e5edf7 pb-5">
 
-        <h3 className="text-xl font-extrabold tracking-tight text-[#0F2A4A] sm:text-2xl">
+        <h3 className="text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
           {review ? "Edit Your Review" : "Write a Review"}
         </h3>
 
@@ -69,7 +69,7 @@ export default function ReviewForm({
           type="button"
           onClick={onCancel}
           aria-label="Close review form"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#64768F] transition-colors duration-200 hover:bg-[#EAF2FC] hover:text-[#2563B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8]"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-muted transition-colors duration-200 hover:bg-tint hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           <X size={19} />
         </button>
@@ -77,7 +77,7 @@ export default function ReviewForm({
 
       {/* RATING */}
       <div className="mt-6">
-        <p className="text-sm font-bold text-[#0F2A4A]">
+        <p className="text-sm font-bold text-ink">
           Your Rating
         </p>
 
@@ -100,12 +100,12 @@ export default function ReviewForm({
                 transition-colors duration-200
                 focus-visible:outline-none
                 focus-visible:ring-2
-                focus-visible:ring-[#2563B8]
+                focus-visible:ring-brand
                 focus-visible:ring-offset-2
                 ${
                   value <= rating
                     ? "border-amber-200 bg-amber-50"
-                    : "border-[#DFE8F3] bg-white hover:border-amber-200 hover:bg-amber-50"
+                    : "border-line bg-surface hover:border-amber-200 hover:bg-amber-50"
                 }
               `}
             >
@@ -115,7 +115,7 @@ export default function ReviewForm({
                 className={
                   value <= rating
                     ? "fill-amber-400 text-amber-400"
-                    : "text-[#C9D6E6] group-hover/star:text-amber-400"
+                    : "text-hxt-c9d6e6 group-hover/star:text-amber-400"
                 }
               />
             </button>
@@ -127,7 +127,7 @@ export default function ReviewForm({
       <div className="mt-7">
         <label
           htmlFor="review-comment"
-          className="block text-sm font-bold text-[#0F2A4A]"
+          className="block text-sm font-bold text-ink"
         >
           Your Comment
         </label>
@@ -141,10 +141,10 @@ export default function ReviewForm({
           rows={5}
           maxLength={2000}
           placeholder="Share your learning experience..."
-          className="mt-3 block w-full resize-y rounded-xl border border-[#DCE7F5] bg-white px-4 py-3.5 text-[14px] leading-7 text-[#0F2A4A] outline-none transition-colors duration-200 placeholder:text-[#9AACBF] hover:border-[#B9D1EE] focus:border-[#2563B8] focus:ring-4 focus:ring-[#2563B8]/10"
+          className="mt-3 block w-full resize-y rounded-xl border border-line bg-surface px-4 py-3.5 text-[14px] leading-7 text-ink outline-none transition-colors duration-200 placeholder:text-subtle hover:border-line-strong focus:border-brand focus:ring-4 focus:ring-brand/10"
         />
 
-        <p className="mt-2 text-right text-xs font-medium text-[#7C8DA6]">
+        <p className="mt-2 text-right text-xs font-medium text-subtle">
           {comment.length}/2000
         </p>
       </div>
@@ -160,12 +160,12 @@ export default function ReviewForm({
       )}
 
       {/* ACTIONS */}
-      <div className="mt-6 flex flex-col-reverse gap-3 border-t border-[#E5EDF7] pt-5 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col-reverse gap-3 border-t border-hxl-e5edf7 pt-5 sm:flex-row sm:items-center">
 
         <button
           type="submit"
           disabled={saving}
-          className="group/submit inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-xl bg-[#2563B8] px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          className="group/submit inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-xl bg-brand px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {saving ? (
             <LoaderCircle
@@ -195,7 +195,7 @@ export default function ReviewForm({
         <button
           type="button"
           onClick={onCancel}
-          className="inline-flex min-h-[50px] items-center justify-center rounded-xl border border-[#D3E2F4] bg-white px-7 text-sm font-bold text-[#55657C] transition-colors duration-200 hover:border-[#2563B8] hover:text-[#2563B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+          className="inline-flex min-h-[50px] items-center justify-center rounded-xl border border-line-strong bg-surface px-7 text-sm font-bold text-muted transition-colors duration-200 hover:border-brand hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
         >
           Cancel
         </button>

@@ -150,18 +150,18 @@ export default function ProfilePage() {
 
   if (loading && !user) {
     return (
-      <main className="relative flex min-h-[75vh] items-center justify-center overflow-hidden bg-[#F6F9FE] px-6">
-        <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-[#DCEBFF] opacity-70 blur-[90px]" />
+      <main className="relative flex min-h-[75vh] items-center justify-center overflow-hidden bg-canvas px-6">
+        <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-hxb-dcebff opacity-70 blur-[90px]" />
 
-        <div className="relative flex flex-col items-center gap-5 rounded-[28px] border border-white bg-white/80 px-12 py-10 shadow-[0_25px_70px_-35px_rgba(40,107,193,0.3)] backdrop-blur-xl">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF3FF] text-[#286BC1]">
+        <div className="relative flex flex-col items-center gap-5 rounded-[28px] border border-white bg-surface/80 px-12 py-10 shadow-[0_25px_70px_-35px_rgba(40,107,193,0.3)] backdrop-blur-xl">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
             <LoaderCircle
               size={29}
               className="animate-spin"
             />
           </div>
 
-          <p className="text-sm font-semibold text-[#536B8B]">
+          <p className="text-sm font-semibold text-hxt-536b8b">
             Loading your profile...
           </p>
         </div>
@@ -175,8 +175,8 @@ export default function ProfilePage() {
 
   if (!user) {
     return (
-      <main className="flex min-h-[75vh] flex-col items-center justify-center bg-[#F6F9FE] px-6 text-center">
-        <div className="w-full max-w-md rounded-[30px] border border-[#E3ECF8] bg-white p-10 shadow-[0_20px_60px_-30px_rgba(30,70,130,0.2)]">
+      <main className="flex min-h-[75vh] flex-col items-center justify-center bg-canvas px-6 text-center">
+        <div className="w-full max-w-md rounded-[30px] border border-line bg-surface p-10 shadow-[0_20px_60px_-30px_rgba(30,70,130,0.2)]">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
             <UserRound size={30} />
           </div>
@@ -191,7 +191,7 @@ export default function ProfilePage() {
           <button
             type="button"
             onClick={loadProfile}
-            className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-[#286BC1] px-7 font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1955A0]"
+            className="mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-brand px-7 font-semibold text-white shadow-lg shadow-blue-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-hxb-1955a0"
           >
             <RefreshCw size={17} />
             Try Again
@@ -208,39 +208,39 @@ export default function ProfilePage() {
   const inputClass = `
     mt-3 block h-[56px] w-full
     rounded-2xl
-    border border-[#DFE8F6]
-    bg-[#F8FAFF]
+    border border-hxl-dfe8f6
+    bg-hxb-f8faff
     px-5
     text-[15px] font-medium
-    text-[#17365F]
+    text-hxt-17365f
     outline-none
     transition-all duration-300 ease-out
-    hover:border-[#BDD3F0]
-    hover:bg-white
-    focus:border-[#438DE9]
-    focus:bg-white
+    hover:border-hxl-bdd3f0
+    hover:bg-surface
+    focus:border-hxl-438de9
+    focus:bg-surface
     focus:shadow-[0_0_0_4px_rgba(66,142,233,0.10),0_12px_28px_-18px_rgba(38,107,193,0.45)]
   `;
 
   return (
-    <main className="min-h-screen overflow-x-clip bg-[#F6F9FE]">
+    <main className="min-h-screen overflow-x-clip bg-canvas">
 
       {/* ========================================
           HERO SECTION
       ======================================== */}
 
-      <section className="relative isolate overflow-hidden bg-[#102B53] pb-32 pt-16 text-white sm:pb-36 sm:pt-20">
+      <section className="relative isolate overflow-hidden bg-hxb-102b53 pb-32 pt-16 text-white sm:pb-36 sm:pt-20">
 
         {/* Background lighting */}
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 -top-64 h-[600px] w-[600px] rounded-full bg-[#377EE3]/35 blur-[110px]"
+          className="pointer-events-none absolute -right-32 -top-64 h-[600px] w-[600px] rounded-full bg-hxb-377ee3/35 blur-[110px]"
         />
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-52 left-1/3 h-[450px] w-[600px] rounded-full bg-[#65ADFF]/20 blur-[120px]"
+          className="pointer-events-none absolute -bottom-52 left-1/3 h-[450px] w-[600px] rounded-full bg-hxb-65adff/20 blur-[120px]"
         />
 
         {/* Decorative depth */}
@@ -255,9 +255,9 @@ export default function ProfilePage() {
           {/* Eyebrow */}
 
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-[2px] w-8 rounded-full bg-[#8BC4FF]" />
+            <span className="h-[2px] w-8 rounded-full bg-hxb-8bc4ff" />
 
-            <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#A6CFFF]">
+            <span className="text-xs font-bold uppercase tracking-[0.24em] text-hxt-a6cfff">
               My Account
             </span>
           </div>
@@ -268,7 +268,7 @@ export default function ProfilePage() {
             My Profile
           </h1>
 
-          <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#BED6F4] sm:text-base">
+          <p className="mt-5 max-w-xl text-[15px] leading-7 text-hxt-bed6f4 sm:text-base">
             Manage your personal information.
           </p>
 
@@ -299,7 +299,7 @@ export default function ProfilePage() {
               group relative overflow-hidden
               rounded-[30px]
               border border-white
-              bg-white
+              bg-surface
               p-6 sm:p-8
               shadow-[0_22px_60px_-32px_rgba(20,52,92,0.42)]
               transition-all duration-500
@@ -311,7 +311,7 @@ export default function ProfilePage() {
 
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full bg-[#E9F3FF]/70 blur-3xl transition-all duration-500 group-hover:bg-[#DCEBFF]"
+              className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full bg-hxb-e9f3ff/70 blur-3xl transition-all duration-500 group-hover:bg-hxb-dcebff"
             />
 
             <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center">
@@ -325,11 +325,11 @@ export default function ProfilePage() {
                   shrink-0 items-center justify-center
                   rounded-[26px]
                   bg-gradient-to-br
-                  from-[#2369C5]
-                  via-[#468FE8]
-                  to-[#9BC8FF]
+                  from-hxg-2369c5
+                  via-hxg-468fe8
+                  to-hxg-9bc8ff
                   text-white
-                  ring-[5px] ring-[#EAF3FF]
+                  ring-[5px] ring-tint
                   shadow-[0_15px_28px_-11px_rgba(40,108,193,0.6)]
                   transition-transform duration-500 ease-out
                   motion-safe:group-hover:-rotate-3
@@ -355,11 +355,11 @@ export default function ProfilePage() {
 
                 <div className="min-w-0">
 
-                  <h2 className="break-words text-2xl font-extrabold tracking-tight text-[#102C57] sm:text-[28px]">
+                  <h2 className="break-words text-2xl font-extrabold tracking-tight text-ink sm:text-[28px]">
                     {user.name}
                   </h2>
 
-                  <p className="mt-2 break-all text-sm font-medium text-[#7488A5]">
+                  <p className="mt-2 break-all text-sm font-medium text-hxt-7488a5">
                     {user.email}
                   </p>
 
@@ -371,11 +371,11 @@ export default function ProfilePage() {
                   className="
                     inline-flex items-center
                     rounded-full
-                    border border-[#D5E7FF]
-                    bg-[#EDF5FF]
+                    border border-hxl-d5e7ff
+                    bg-hxb-edf5ff
                     px-4 py-2
                     text-xs font-bold capitalize
-                    tracking-wide text-[#286BC1]
+                    tracking-wide text-brand
                     shadow-[0_4px_12px_-8px_rgba(40,107,193,0.3)]
                   "
                 >
@@ -396,8 +396,8 @@ export default function ProfilePage() {
               profile-enter-delayed
               relative overflow-hidden
               rounded-[30px]
-              border border-[#E3EBF7]
-              bg-white
+              border border-hxl-e3ebf7
+              bg-surface
               p-6 sm:p-9
               shadow-[0_20px_60px_-35px_rgba(20,52,92,0.24)]
               transition-shadow duration-500
@@ -409,18 +409,18 @@ export default function ProfilePage() {
 
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#2F77D2] via-[#79B5FF] to-transparent"
+              className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-hxg-2f77d2 via-hxg-79b5ff to-transparent"
             />
 
             {/* Section heading */}
 
-            <div className="mb-8 border-b border-[#EDF1F7] pb-7">
+            <div className="mb-8 border-b border-hxl-edf1f7 pb-7">
 
-              <h2 className="text-2xl font-extrabold tracking-tight text-[#102C57] sm:text-[28px]">
+              <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-[28px]">
                 Personal Information
               </h2>
 
-              <p className="mt-2 text-sm leading-6 text-[#7488A5]">
+              <p className="mt-2 text-sm leading-6 text-hxt-7488a5">
                 Update your name and email address.
               </p>
 
@@ -474,12 +474,12 @@ export default function ProfilePage() {
 
                 <label className="group/field block">
 
-                  <span className="flex items-center gap-2.5 text-sm font-bold text-[#17365F]">
+                  <span className="flex items-center gap-2.5 text-sm font-bold text-hxt-17365f">
 
                     <UserRound
                       size={18}
                       strokeWidth={1.9}
-                      className="text-[#7A9CC8] transition-colors duration-300 group-focus-within/field:text-[#3478D4]"
+                      className="text-hxt-7a9cc8 transition-colors duration-300 group-focus-within/field:text-brand-light"
                     />
 
                     Full Name
@@ -502,12 +502,12 @@ export default function ProfilePage() {
 
                 <label className="group/field block">
 
-                  <span className="flex items-center gap-2.5 text-sm font-bold text-[#17365F]">
+                  <span className="flex items-center gap-2.5 text-sm font-bold text-hxt-17365f">
 
                     <Mail
                       size={18}
                       strokeWidth={1.9}
-                      className="text-[#7A9CC8] transition-colors duration-300 group-focus-within/field:text-[#3478D4]"
+                      className="text-hxt-7a9cc8 transition-colors duration-300 group-focus-within/field:text-brand-light"
                     />
 
                     Email Address
@@ -532,7 +532,7 @@ export default function ProfilePage() {
                   FORM ACTIONS
               ======================================== */}
 
-              <div className="flex flex-col-reverse gap-4 border-t border-[#EDF1F7] pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col-reverse gap-4 border-t border-hxl-edf1f7 pt-7 sm:flex-row sm:items-center sm:justify-between">
 
                 {/* RESET BUTTON */}
 
@@ -546,15 +546,15 @@ export default function ProfilePage() {
                     items-center justify-center
                     gap-2.5
                     rounded-2xl
-                    border border-[#E0EAF6]
-                    bg-white
+                    border border-hxl-e0eaf6
+                    bg-surface
                     px-5
                     text-sm font-bold
-                    text-[#607A9B]
+                    text-hxt-607a9b
                     transition-all duration-300
-                    hover:border-[#B8D5F8]
-                    hover:bg-[#F5F9FF]
-                    hover:text-[#286BC1]
+                    hover:border-hxl-b8d5f8
+                    hover:bg-hxb-f5f9ff
+                    hover:text-brand
                     disabled:cursor-not-allowed
                     disabled:opacity-50
                   "
@@ -583,8 +583,8 @@ export default function ProfilePage() {
                     overflow-hidden
                     rounded-2xl
                     bg-gradient-to-r
-                    from-[#286BC1]
-                    to-[#4A98EE]
+                    from-brand
+                    to-hxg-4a98ee
                     px-8
                     text-sm font-bold
                     text-white

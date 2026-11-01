@@ -172,18 +172,18 @@ export default function CoursesCatalog() {
 
       {/* ================= RESULTS TOOLBAR ================= */}
 
-      <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-b border-[#E3ECF7] pb-5">
+      <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-b border-line pb-5">
 
         {/* Results count */}
         <p
-          className="text-sm font-semibold text-[#55657C]"
+          className="text-sm font-semibold text-muted"
           aria-live="polite"
         >
           {loading ? (
             "Loading courses..."
           ) : (
             <>
-              <span className="text-xl font-extrabold text-[#0F2A4A]">
+              <span className="text-xl font-extrabold text-ink">
                 {filteredCourses.length}
               </span>{" "}
               courses found
@@ -194,7 +194,7 @@ export default function CoursesCatalog() {
         {/* SORT CONTROL */}
         <label className="flex items-center gap-3">
 
-          <span className="whitespace-nowrap text-sm font-semibold text-[#64768F]">
+          <span className="whitespace-nowrap text-sm font-semibold text-muted">
             Sort by
           </span>
 
@@ -208,16 +208,16 @@ export default function CoursesCatalog() {
                 h-[44px] min-w-[170px]
                 cursor-pointer appearance-none
                 rounded-xl
-                border border-[#DCE7F5]
-                bg-white
+                border border-line
+                bg-surface
                 pl-4 pr-10
                 text-sm font-semibold
-                text-[#0F2A4A]
+                text-ink
                 outline-none
                 transition-colors duration-200
-                hover:border-[#B9D1EE]
-                focus:border-[#2563B8]
-                focus:ring-4 focus:ring-[#2563B8]/10
+                hover:border-line-strong
+                focus:border-brand
+                focus:ring-4 focus:ring-brand/10
               "
             >
               <option value="newest">Newest</option>
@@ -232,7 +232,7 @@ export default function CoursesCatalog() {
             <ChevronDown
               size={17}
               aria-hidden="true"
-              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#7C93B2]"
+              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-hxt-7c93b2"
             />
           </div>
         </label>
@@ -245,22 +245,22 @@ export default function CoursesCatalog() {
           {Array.from({ length: 6 }, (_, index) => (
             <div
               key={index}
-              className="h-[350px] animate-pulse overflow-hidden rounded-3xl border border-[#E3ECF7] bg-white p-4"
+              className="h-[350px] animate-pulse overflow-hidden rounded-3xl border border-line bg-surface p-4"
             >
               {/* Image skeleton */}
-              <div className="h-[175px] rounded-2xl bg-[#E6EEF8]" />
+              <div className="h-[175px] rounded-2xl bg-line" />
 
               {/* Text skeleton */}
               <div className="mt-6 space-y-4 px-1">
-                <div className="h-4 w-[35%] rounded-full bg-[#E6EEF8]" />
+                <div className="h-4 w-[35%] rounded-full bg-line" />
 
-                <div className="h-5 w-[80%] rounded-full bg-[#E6EEF8]" />
+                <div className="h-5 w-[80%] rounded-full bg-line" />
 
-                <div className="h-4 w-[60%] rounded-full bg-[#E6EEF8]" />
+                <div className="h-4 w-[60%] rounded-full bg-line" />
 
                 <div className="flex justify-between pt-3">
-                  <div className="h-5 w-16 rounded-full bg-[#E6EEF8]" />
-                  <div className="h-9 w-24 rounded-xl bg-[#E6EEF8]" />
+                  <div className="h-5 w-16 rounded-full bg-line" />
+                  <div className="h-9 w-24 rounded-xl bg-line" />
                 </div>
               </div>
             </div>
@@ -270,13 +270,13 @@ export default function CoursesCatalog() {
 
         /* ================= ERROR STATE ================= */
 
-        <div className="mt-8 flex min-h-[320px] flex-col items-center justify-center rounded-3xl border border-red-100 bg-white p-8 text-center">
+        <div className="mt-8 flex min-h-[320px] flex-col items-center justify-center rounded-3xl border border-red-100 bg-surface p-8 text-center">
 
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-50 text-red-500">
             <AlertCircle size={32} strokeWidth={1.7} />
           </div>
 
-          <h2 className="mt-5 text-2xl font-extrabold text-[#0F2A4A]">
+          <h2 className="mt-5 text-2xl font-extrabold text-ink">
             Something went wrong
           </h2>
 
@@ -290,13 +290,13 @@ export default function CoursesCatalog() {
             className="
               group/retry mt-6 inline-flex min-h-12
               items-center justify-center gap-2.5
-              rounded-xl bg-[#2563B8]
+              rounded-xl bg-brand
               px-7 text-sm font-bold text-white
               transition-colors duration-200
-              hover:bg-[#1D4F94]
+              hover:bg-brand-dark
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
               focus-visible:ring-offset-2
             "
           >
@@ -313,24 +313,24 @@ export default function CoursesCatalog() {
 
         /* ================= EMPTY STATE ================= */
 
-        <div className="mt-8 flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-[#C3D8F2] bg-white p-8 text-center">
+        <div className="mt-8 flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-hxl-c3d8f2 bg-surface p-8 text-center">
 
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
             <BookOpen size={32} strokeWidth={1.5} />
           </div>
 
-          <h2 className="mt-6 text-2xl font-extrabold text-[#0F2A4A]">
+          <h2 className="mt-6 text-2xl font-extrabold text-ink">
             No courses found
           </h2>
 
-          <p className="mt-2 max-w-md text-sm leading-7 text-[#64768F]">
+          <p className="mt-2 max-w-md text-sm leading-7 text-muted">
             Try changing your filters or check back for new courses.
           </p>
 
           <button
             type="button"
             onClick={resetFilters}
-            className="mt-5 rounded-xl px-5 py-2.5 text-sm font-bold text-[#2563B8] transition-colors duration-200 hover:bg-[#EAF2FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8]"
+            className="mt-5 rounded-xl px-5 py-2.5 text-sm font-bold text-brand transition-colors duration-200 hover:bg-tint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             Clear filters
           </button>
@@ -371,35 +371,35 @@ export default function CoursesCatalog() {
               flex h-11 w-11
               items-center justify-center
               rounded-xl
-              border border-[#D3E2F4]
-              bg-white text-[#2563B8]
+              border border-line-strong
+              bg-surface text-brand
               transition-colors duration-200
-              hover:border-[#2563B8]
-              hover:bg-[#F3F8FE]
+              hover:border-brand
+              hover:bg-tint-soft
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
               focus-visible:ring-offset-2
               disabled:cursor-not-allowed
               disabled:opacity-35
-              disabled:hover:border-[#D3E2F4]
-              disabled:hover:bg-white
+              disabled:hover:border-line-strong
+              disabled:hover:bg-surface
             "
           >
             <ChevronLeft size={20} />
           </button>
 
           {/* Current page */}
-          <div className="flex items-center gap-2 rounded-xl border border-[#DFE8F3] bg-white px-5 py-2.5">
-            <span className="text-sm font-bold text-[#2563B8]">
+          <div className="flex items-center gap-2 rounded-xl border border-line bg-surface px-5 py-2.5">
+            <span className="text-sm font-bold text-brand">
               {page}
             </span>
 
-            <span className="text-sm text-[#9AACBF]">
+            <span className="text-sm text-subtle">
               /
             </span>
 
-            <span className="text-sm font-semibold text-[#55657C]">
+            <span className="text-sm font-semibold text-muted">
               {totalPages}
             </span>
           </div>
@@ -416,19 +416,19 @@ export default function CoursesCatalog() {
               flex h-11 w-11
               items-center justify-center
               rounded-xl
-              border border-[#D3E2F4]
-              bg-white text-[#2563B8]
+              border border-line-strong
+              bg-surface text-brand
               transition-colors duration-200
-              hover:border-[#2563B8]
-              hover:bg-[#F3F8FE]
+              hover:border-brand
+              hover:bg-tint-soft
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
               focus-visible:ring-offset-2
               disabled:cursor-not-allowed
               disabled:opacity-35
-              disabled:hover:border-[#D3E2F4]
-              disabled:hover:bg-white
+              disabled:hover:border-line-strong
+              disabled:hover:bg-surface
             "
           >
             <ChevronRight size={20} />

@@ -85,16 +85,16 @@ export default function EnrollmentCard({ course }) {
   }
 
   return (
-    <aside className="rounded-3xl border border-[#DFE8F3] bg-white p-5 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)] sm:p-6">
+    <aside className="rounded-3xl border border-line bg-surface p-5 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)] sm:p-6">
 
       {/* ================= PRICE ================= */}
 
-      <div className="mb-5 rounded-2xl bg-[#F3F8FE] px-6 py-6">
-        <p className="text-[13px] font-semibold text-[#64768F]">
+      <div className="mb-5 rounded-2xl bg-tint-soft px-6 py-6">
+        <p className="text-[13px] font-semibold text-muted">
           Course Price
         </p>
 
-        <p className="mt-2 text-[42px] font-extrabold leading-none tracking-[-0.04em] text-[#0F2A4A] sm:text-[44px]">
+        <p className="mt-2 text-[42px] font-extrabold leading-none tracking-[-0.04em] text-ink sm:text-[44px]">
           {free ? "Free" : `$${price.toFixed(2)}`}
         </p>
       </div>
@@ -116,8 +116,8 @@ export default function EnrollmentCard({ course }) {
           disabled:cursor-not-allowed
           ${
             status
-              ? "bg-[#2F8F73] focus-visible:ring-[#2F8F73]"
-              : "bg-[#2563B8] hover:bg-[#1D4F94] focus-visible:ring-[#2563B8]"
+              ? "bg-hxb-2f8f73 focus-visible:ring-hxr-2f8f73"
+              : "bg-brand hover:bg-brand-dark focus-visible:ring-brand"
           }
           disabled:opacity-65
         `}
@@ -166,7 +166,7 @@ export default function EnrollmentCard({ course }) {
             ${
               status
                 ? "border-green-100 bg-green-50 text-green-700"
-                : "border-[#DCE7F5] bg-[#F3F8FE] text-[#55657C]"
+                : "border-line bg-tint-soft text-muted"
             }
           `}
         >
@@ -185,24 +185,24 @@ export default function EnrollmentCard({ course }) {
 
       {/* ================= BENEFITS ================= */}
 
-      <div className="mt-6 space-y-4 border-t border-[#E8EFF8] pt-6">
+      <div className="mt-6 space-y-4 border-t border-tint pt-6">
 
         <div className="flex items-center gap-3.5">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAF2FC] text-[#2563B8]">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tint text-brand">
             <CheckCircle2 size={19} />
           </span>
 
-          <p className="text-[13px] font-medium leading-6 text-[#55657C]">
+          <p className="text-[13px] font-medium leading-6 text-muted">
             Learn at your own pace
           </p>
         </div>
 
         <div className="flex items-center gap-3.5">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAF2FC] text-[#2563B8]">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-tint text-brand">
             <LockKeyhole size={19} />
           </span>
 
-          <p className="text-[13px] font-medium leading-6 text-[#55657C]">
+          <p className="text-[13px] font-medium leading-6 text-muted">
             Lessons accessible after activation
           </p>
         </div>
@@ -211,12 +211,12 @@ export default function EnrollmentCard({ course }) {
 
       {/* ================= LOGIN LINK ================= */}
 
-      <p className="mt-6 border-t border-[#E8EFF8] pt-5 text-center text-xs leading-6 text-[#7C8DA6]">
+      <p className="mt-6 border-t border-tint pt-5 text-center text-xs leading-6 text-subtle">
         Already have an account?{" "}
 
         <Link
           href="/login"
-          className="font-bold text-[#2563B8] transition-colors hover:text-[#1D4F94] hover:underline"
+          className="font-bold text-brand transition-colors hover:text-brand-dark hover:underline"
         >
           Log in
         </Link>

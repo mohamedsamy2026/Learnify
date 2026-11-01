@@ -59,9 +59,9 @@ export default function EnrolledCourseCard({ course }) {
   return (
     <article
       className="
-        group/card flex h-full flex-col
+        lift group/card flex h-full flex-col
         overflow-hidden rounded-3xl
-        border border-[#DFE8F3] bg-white
+        border border-line bg-surface
         shadow-[0_10px_30px_-22px_rgba(15,42,74,0.3)]
         transition-shadow duration-300
         hover:shadow-[0_20px_44px_-24px_rgba(15,42,74,0.4)]
@@ -69,7 +69,7 @@ export default function EnrolledCourseCard({ course }) {
     >
       {/* ================= COURSE IMAGE ================= */}
 
-      <div className="relative flex h-48 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-[#6FB3F5] to-[#1B4B87]">
+      <div className="relative flex h-48 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-hxg-6fb3f5 to-hxg-1b4b87">
         {course.thumbnail ? (
           <img
             src={course.thumbnail}
@@ -91,7 +91,7 @@ export default function EnrolledCourseCard({ course }) {
 
         {/* CATEGORY + STATUS */}
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <span className="min-w-0 max-w-full truncate text-xs font-bold text-[#2563B8]">
+          <span className="min-w-0 max-w-full truncate text-xs font-bold text-brand">
             {course.category}
           </span>
 
@@ -109,12 +109,12 @@ export default function EnrolledCourseCard({ course }) {
         </div>
 
         {/* COURSE TITLE */}
-        <h3 className="mt-4 line-clamp-2 min-h-[56px] text-[20px] font-extrabold leading-[1.4] tracking-tight text-[#0F2A4A]">
+        <h3 className="mt-4 line-clamp-2 min-h-[56px] text-[20px] font-extrabold leading-[1.4] tracking-tight text-ink">
           {course.title}
         </h3>
 
         {/* DESCRIPTION */}
-        <p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-[#64768F]">
+        <p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-muted">
           {course.description ||
             "Continue your learning journey."}
         </p>
@@ -122,15 +122,15 @@ export default function EnrolledCourseCard({ course }) {
         {/* ================= COURSE PROGRESS ================= */}
 
         {canLearn && (
-          <div className="mt-5 rounded-2xl bg-[#F3F8FE] p-4">
+          <div className="mt-5 rounded-2xl bg-tint-soft p-4">
             {hasProgress ? (
               <>
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className="text-[13px] font-semibold text-[#55657C]">
+                  <span className="text-[13px] font-semibold text-muted">
                     Course Progress
                   </span>
 
-                  <span className="text-[15px] font-extrabold text-[#2563B8]">
+                  <span className="text-[15px] font-extrabold text-brand">
                     {progress}%
                   </span>
                 </div>
@@ -141,24 +141,24 @@ export default function EnrolledCourseCard({ course }) {
                   aria-valuenow={progress}
                   aria-valuemin={0}
                   aria-valuemax={100}
-                  className="h-2 overflow-hidden rounded-full bg-[#DCE8F6]"
+                  className="h-2 overflow-hidden rounded-full bg-hxb-dce8f6"
                 >
                   <div
-                    className="h-full rounded-full bg-[#2563B8] transition-[width] duration-700 ease-out"
+                    className="h-full rounded-full bg-brand transition-[width] duration-700 ease-out"
                     style={{
                       width: `${progress}%`,
                     }}
                   />
                 </div>
 
-                <p className="mt-3 text-xs font-medium text-[#64768F]">
+                <p className="mt-3 text-xs font-medium text-muted">
                   {course.completedLessons} of{" "}
                   {course.totalLessons} lessons completed
                 </p>
               </>
             ) : (
-              <div className="flex items-center gap-3 text-sm text-[#64768F]">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-[#2563B8]">
+              <div className="flex items-center gap-3 text-sm text-muted">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface text-brand">
                   <RotateCcw size={18} />
                 </span>
 
@@ -170,7 +170,7 @@ export default function EnrolledCourseCard({ course }) {
 
         {/* ================= ENROLLMENT STATUS ================= */}
 
-        <div className="mt-5 flex items-center gap-2.5 text-[13px] font-medium text-[#64768F]">
+        <div className="mt-5 flex items-center gap-2.5 text-[13px] font-medium text-muted">
           {course.status === "pending" ? (
             <>
               <Clock3
@@ -191,7 +191,7 @@ export default function EnrolledCourseCard({ course }) {
             <>
               <BookOpen
                 size={18}
-                className="shrink-0 text-[#2563B8]"
+                className="shrink-0 text-brand"
               />
               Ready to learn
             </>
@@ -215,13 +215,13 @@ export default function EnrolledCourseCard({ course }) {
               className="
                 group/action flex min-h-[50px]
                 w-full items-center justify-center gap-2.5
-                rounded-xl bg-[#2563B8] px-5
+                rounded-xl bg-brand px-5
                 text-sm font-bold text-white
                 transition-colors duration-200
-                hover:bg-[#1D4F94]
+                hover:bg-brand-dark
                 focus-visible:outline-none
                 focus-visible:ring-2
-                focus-visible:ring-[#2563B8]
+                focus-visible:ring-brand
                 focus-visible:ring-offset-2
               "
             >
@@ -235,7 +235,7 @@ export default function EnrolledCourseCard({ course }) {
               />
             </Link>
           ) : (
-            <div className="flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-[#EEF2F7] px-5 text-sm font-bold text-[#8194AD]">
+            <div className="flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-hxb-eef2f7 px-5 text-sm font-bold text-hxt-8194ad">
               <LockKeyhole size={17} />
               Access Unavailable
             </div>

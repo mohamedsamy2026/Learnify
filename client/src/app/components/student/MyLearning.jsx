@@ -81,21 +81,21 @@ export default function MyLearning() {
   }, [courses, tab, search]);
 
   return (
-    <main className="min-h-screen overflow-x-clip bg-[#F6F9FD]">
+    <main className="min-h-screen overflow-x-clip bg-canvas">
 
       {/* ================= HERO ================= */}
 
-      <section className="bg-[#12386F] px-6 pb-32 pt-16 text-white sm:pb-36 sm:pt-20 lg:px-12">
+      <section className="bg-ink-soft px-6 pb-32 pt-16 text-white sm:pb-36 sm:pt-20 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-sm font-bold text-[#9CCBFF]">
+          <p className="mb-4 text-sm font-bold text-hxt-9ccbff">
             My Learning Space
           </p>
 
           <h1 className="text-4xl font-extrabold leading-tight tracking-[-0.04em] sm:text-5xl lg:text-[54px]">
-            My <span className="text-[#9CCBFF]">Learning</span>
+            My <span className="text-hxt-9ccbff">Learning</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-[15px] leading-8 text-[#CDDEEF] sm:text-base">
+          <p className="mt-5 max-w-xl text-[15px] leading-8 text-hxt-cddeef sm:text-base">
             View your enrolled courses and pick up where
             you left off.
           </p>
@@ -110,16 +110,16 @@ export default function MyLearning() {
 
           /* ================= LOADING STATE ================= */
 
-          <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 rounded-3xl border border-[#DFE8F3] bg-white p-10 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
+          <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 rounded-3xl border border-line bg-surface p-10 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
 
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-tint text-brand">
               <LoaderCircle
                 size={26}
                 className="animate-spin"
               />
             </div>
 
-            <p className="text-sm font-semibold text-[#64768F]">
+            <p className="text-sm font-semibold text-muted">
               Loading your courses...
             </p>
           </div>
@@ -128,19 +128,19 @@ export default function MyLearning() {
 
           /* ================= ERROR STATE ================= */
 
-          <div className="flex min-h-[300px] flex-col items-center justify-center rounded-3xl border border-red-100 bg-white px-6 py-12 text-center shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
+          <div className="flex min-h-[300px] flex-col items-center justify-center rounded-3xl border border-red-100 bg-surface px-6 py-12 text-center shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
 
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-500">
               <AlertCircle size={28} strokeWidth={1.7} />
             </div>
 
-            <h2 className="mt-5 text-xl font-extrabold text-[#0F2A4A]">
+            <h2 className="mt-5 text-xl font-extrabold text-ink">
               Unable to Load Courses
             </h2>
 
             <p
               role="alert"
-              className="mt-2 max-w-md text-sm leading-7 text-[#64768F]"
+              className="mt-2 max-w-md text-sm leading-7 text-muted"
             >
               {error}
             </p>
@@ -148,7 +148,7 @@ export default function MyLearning() {
             <button
               type="button"
               onClick={loadData}
-              className="group/retry mt-6 inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-xl bg-[#2563B8] px-6 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+              className="group/retry mt-6 inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-xl bg-brand px-6 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
             >
               <RefreshCw
                 size={17}
@@ -163,7 +163,7 @@ export default function MyLearning() {
           <>
             {/* ================= FILTER TOOLBAR ================= */}
 
-            <div className="rounded-3xl border border-[#DFE8F3] bg-white p-4 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)] sm:p-5">
+            <div className="rounded-3xl border border-line bg-surface p-4 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)] sm:p-5">
               <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
 
                 {/* ================= TABS ================= */}
@@ -190,12 +190,12 @@ export default function MyLearning() {
                           transition-colors duration-200
                           focus-visible:outline-none
                           focus-visible:ring-2
-                          focus-visible:ring-[#2563B8]
+                          focus-visible:ring-brand
                           focus-visible:ring-offset-2
                           ${
                             active
-                              ? "bg-[#2563B8] text-white"
-                              : "bg-[#F3F7FC] text-[#55657C] hover:bg-[#E8F0FA] hover:text-[#2563B8]"
+                              ? "bg-brand text-white"
+                              : "bg-hxb-f3f7fc text-muted hover:bg-hxb-e8f0fa hover:text-brand"
                           }
                         `}
                       >
@@ -211,7 +211,7 @@ export default function MyLearning() {
 
                   <Search
                     size={18}
-                    className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-[#8498B3] transition-colors duration-200 group-focus-within/search:text-[#2563B8]"
+                    className="pointer-events-none absolute left-4 top-1/2 z-10 -translate-y-1/2 text-hxt-8498b3 transition-colors duration-200 group-focus-within/search:text-brand"
                   />
 
                   <input
@@ -224,17 +224,17 @@ export default function MyLearning() {
                     aria-label="Search my courses"
                     className="
                       h-[48px] w-full rounded-xl
-                      border border-[#DCE7F5]
-                      bg-[#F9FBFE] pl-11 pr-4
-                      text-sm font-medium text-[#0F2A4A]
+                      border border-line
+                      bg-hxb-f9fbfe pl-11 pr-4
+                      text-sm font-medium text-ink
                       outline-none
                       transition-colors duration-200
-                      placeholder:text-[#9AACBF]
-                      hover:border-[#B9D1EE]
-                      focus:border-[#2563B8]
-                      focus:bg-white
+                      placeholder:text-subtle
+                      hover:border-line-strong
+                      focus:border-brand
+                      focus:bg-surface
                       focus:ring-4
-                      focus:ring-[#2563B8]/10
+                      focus:ring-brand/10
                     "
                   />
                 </label>
@@ -246,13 +246,13 @@ export default function MyLearning() {
             <div className="mb-6 mt-12 flex flex-wrap items-end justify-between gap-4">
 
               <div>
-                <h2 className="text-2xl font-extrabold tracking-tight text-[#0F2A4A] sm:text-[30px]">
+                <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-[30px]">
                   My Courses
                 </h2>
 
                 <p
                   aria-live="polite"
-                  className="mt-2 text-sm font-medium text-[#64768F]"
+                  className="mt-2 text-sm font-medium text-muted"
                 >
                   {filtered.length} courses found
                 </p>
@@ -266,15 +266,15 @@ export default function MyLearning() {
                 className="
                   group/refresh inline-flex min-h-[44px]
                   items-center justify-center gap-2.5
-                  rounded-xl border border-[#D3E2F4]
-                  bg-white px-5
-                  text-sm font-bold text-[#2563B8]
+                  rounded-xl border border-line-strong
+                  bg-surface px-5
+                  text-sm font-bold text-brand
                   transition-colors duration-200
-                  hover:border-[#2563B8]
-                  hover:bg-[#F3F8FE]
+                  hover:border-brand
+                  hover:bg-tint-soft
                   focus-visible:outline-none
                   focus-visible:ring-2
-                  focus-visible:ring-[#2563B8]
+                  focus-visible:ring-brand
                   focus-visible:ring-offset-2
                   disabled:cursor-not-allowed
                   disabled:opacity-50
@@ -308,26 +308,26 @@ export default function MyLearning() {
 
               /* ================= EMPTY STATE ================= */
 
-              <div className="flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-[#C3D8F2] bg-white p-8 text-center">
+              <div className="flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-hxl-c3d8f2 bg-surface p-8 text-center">
 
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
                   <BookOpen
                     size={32}
                     strokeWidth={1.5}
                   />
                 </div>
 
-                <h2 className="mt-6 text-2xl font-extrabold text-[#0F2A4A]">
+                <h2 className="mt-6 text-2xl font-extrabold text-ink">
                   No courses found
                 </h2>
 
-                <p className="mt-2 max-w-md text-sm leading-7 text-[#64768F]">
+                <p className="mt-2 max-w-md text-sm leading-7 text-muted">
                   Explore available courses or try another filter.
                 </p>
 
                 <Link
                   href="/courses"
-                  className="group/explore mt-6 inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-xl bg-[#2563B8] px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+                  className="group/explore mt-6 inline-flex min-h-[50px] items-center justify-center gap-2.5 rounded-xl bg-brand px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                 >
                   <GraduationCap size={19} />
 

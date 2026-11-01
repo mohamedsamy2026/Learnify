@@ -79,14 +79,14 @@ export default function Statistics() {
   ];
 
   return (
-    <section className="bg-[#1B4B87] px-5 py-14 text-white sm:px-6 sm:py-16 lg:px-12">
+    <section className="bg-hxb-1b4b87 px-5 py-14 text-white sm:px-6 sm:py-16 lg:px-12">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
         {items.map(({ label, value, icon: Icon }) => (
           <div
             key={label}
             className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/[0.07] px-4 py-7 text-center sm:min-h-[200px]"
           >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-[#BBDDFF]">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-hxt-bbddff">
               <Icon size={24} strokeWidth={1.7} />
             </div>
 
@@ -94,7 +94,7 @@ export default function Statistics() {
               {value ?? "—"}
             </span>
 
-            <span className="mt-3 text-xs font-medium leading-5 text-[#D3E5F8] sm:text-sm">
+            <span className="mt-3 text-xs font-medium leading-5 text-hxt-d3e5f8 sm:text-sm">
               {label}
             </span>
           </div>

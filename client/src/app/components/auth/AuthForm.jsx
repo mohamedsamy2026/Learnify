@@ -58,17 +58,17 @@ const registerSchema = z
 
 const inputClass = `
   h-[58px] w-full rounded-2xl
-  border border-[#DDE8F6]
-  bg-[#F7FAFF]
+  border border-hxl-dde8f6
+  bg-canvas
   pl-13 pr-4
-  text-[15px] font-medium text-[#102C57]
+  text-[15px] font-medium text-ink
   outline-none
   transition-all duration-300 ease-out
-  placeholder:text-[#A0AFC3]
-  hover:border-[#BBD5F5]
-  hover:bg-white
-  focus:border-[#438DE9]
-  focus:bg-white
+  placeholder:text-hxt-a0afc3
+  hover:border-hxl-bbd5f5
+  hover:bg-surface
+  focus:border-hxl-438de9
+  focus:bg-surface
   focus:shadow-[0_0_0_4px_rgba(59,141,250,0.10),0_12px_30px_-18px_rgba(40,107,193,0.4)]
 `;
 
@@ -298,7 +298,7 @@ export default function AuthForm({ mode = "login" }) {
 
         {/* PASSWORD REQUIREMENTS */}
         {!isLogin && (
-          <p className="text-xs leading-6 text-[#7286A1]">
+          <p className="text-xs leading-6 text-hxt-7286a1">
             Use at least 8 characters for your password.
           </p>
         )}
@@ -311,7 +311,7 @@ export default function AuthForm({ mode = "login" }) {
     group/submit relative mt-5 flex h-[58px] w-full
     items-center justify-center gap-3 overflow-hidden
     rounded-2xl bg-gradient-to-r
-    from-[#2465BE] to-[#438DE9]
+    from-hxg-2465be to-hxg-438de9
     font-bold text-white
     transition-all duration-300
     hover:shadow-lg
@@ -356,7 +356,7 @@ export default function AuthForm({ mode = "login" }) {
         </button>
 
         {/* FOOTER TEXT */}
-        <p className="pt-1 text-center text-xs leading-6 text-[#899AB0]">
+        <p className="pt-1 text-center text-xs leading-6 text-hxt-899ab0">
           Your account helps you access courses
           and track your learning progress.
         </p>
@@ -406,9 +406,9 @@ function FormField({
       <label
         htmlFor={id}
         className="
-          mb-2.5 block text-sm font-bold text-[#17365F]
+          mb-2.5 block text-sm font-bold text-hxt-17365f
           transition-colors duration-300
-          group-focus-within/field:text-[#286BC1]
+          group-focus-within/field:text-brand
         "
       >
         {label}
@@ -421,10 +421,10 @@ function FormField({
           aria-hidden="true"
           className="
             pointer-events-none absolute left-4 top-1/2
-            z-10 -translate-y-1/2 text-[#8DA3BC]
+            z-10 -translate-y-1/2 text-hxt-8da3bc
             transition-all duration-300
             group-focus-within/field:scale-110
-            group-focus-within/field:text-[#3478D4]
+            group-focus-within/field:text-brand-light
           "
         />
 
@@ -455,11 +455,11 @@ function PasswordToggle({ visible, onClick }) {
       className="
         absolute right-3 top-1/2 flex h-9 w-9
         -translate-y-1/2 items-center justify-center
-        rounded-xl text-[#8196AE]
+        rounded-xl text-hxt-8196ae
         transition-all duration-300
-        hover:bg-[#E8F2FF] hover:text-[#286BC1]
+        hover:bg-hxb-e8f2ff hover:text-brand
         focus-visible:outline-none
-        focus-visible:ring-2 focus-visible:ring-[#438DE9]
+        focus-visible:ring-2 focus-visible:ring-hxr-438de9
       "
     >
       {visible ? <EyeOff size={19} /> : <Eye size={19} />}

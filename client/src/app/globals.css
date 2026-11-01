@@ -1,26 +1,554 @@
 @import "tailwindcss";
 
+/* ==========================================================
+   LEARNIFY DESIGN TOKENS (Light + Dark)
+   Colors are CSS variables. Light values live in :root and
+   dark values in .dark. Components use classes such as
+   bg-brand, text-ink, border-line, bg-surface.
+   Tokens named hx* are legacy one-off colors that were
+   converted so they also adapt to dark mode.
+   ========================================================== */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand: #2563b8;
+  --brand-dark: #1d4f94;
+  --brand-light: #3b82e0;
+  --ink: #0f2a4a;
+  --muted: #55657c;
+  --subtle: #7c8da6;
+  --canvas: #f6f9fd;
+  --tint: #eaf2fc;
+  --tint-soft: #f3f8fe;
+  --line: #dfe8f3;
+  --line-strong: #d3e2f4;
+  --surface: #ffffff;
+  --accent-soft: #fff1cf;
+  --ink-soft: #12386f;
+  --navy: #0f2a4a;
+  --accent: #f5a524;
+  --hxb-102b53: #102b53;
+  --hxb-102d70: #102d70;
+  --hxb-174a98: #174a98;
+  --hxb-1955a0: #1955a0;
+  --hxb-1b4b87: #1b4b87;
+  --hxb-2f8f73: #2f8f73;
+  --hxb-347fd8: #347fd8;
+  --hxb-377ee3: #377ee3;
+  --hxb-65adff: #65adff;
+  --hxb-8bc4ff: #8bc4ff;
+  --hxb-8ebeff: #8ebeff;
+  --hxb-9cd3ff: #9cd3ff;
+  --hxb-a7ddff: #a7ddff;
+  --hxb-a8dcff: #a8dcff;
+  --hxb-c9e2ff: #c9e2ff;
+  --hxb-cfe2f8: #cfe2f8;
+  --hxb-d9e8f8: #d9e8f8;
+  --hxb-dae8f8: #dae8f8;
+  --hxb-dce8f6: #dce8f6;
+  --hxb-dcebff: #dcebff;
+  --hxb-ddeaf9: #ddeaf9;
+  --hxb-e4f0ff: #e4f0ff;
+  --hxb-e4f2ff: #e4f2ff;
+  --hxb-e6f1ff: #e6f1ff;
+  --hxb-e7f1ff: #e7f1ff;
+  --hxb-e8f0fa: #e8f0fa;
+  --hxb-e8f2ff: #e8f2ff;
+  --hxb-e8f7ef: #e8f7ef;
+  --hxb-e9f3ff: #e9f3ff;
+  --hxb-eaf2fc: #eaf2fc;
+  --hxb-ebf8f2: #ebf8f2;
+  --hxb-edf5ff: #edf5ff;
+  --hxb-eef2f7: #eef2f7;
+  --hxb-eef3fa: #eef3fa;
+  --hxb-eef5fd: #eef5fd;
+  --hxb-f0f5fc: #f0f5fc;
+  --hxb-f1f7ff: #f1f7ff;
+  --hxb-f3f6fa: #f3f6fa;
+  --hxb-f3f7fc: #f3f7fc;
+  --hxb-f4f8ff: #f4f8ff;
+  --hxb-f5f9ff: #f5f9ff;
+  --hxb-f8fafe: #f8fafe;
+  --hxb-f8faff: #f8faff;
+  --hxb-f9fbfe: #f9fbfe;
+  --hxb-fff1cf: #fff1cf;
+  --hxb-fffafa: #fffafa;
+  --hxg-071a39: #071a39;
+  --hxg-0a2a57: #0a2a57;
+  --hxg-0c3678: #0c3678;
+  --hxg-102c64: #102c64;
+  --hxg-1b4b87: #1b4b87;
+  --hxg-2369c5: #2369c5;
+  --hxg-2465be: #2465be;
+  --hxg-2768c1: #2768c1;
+  --hxg-2f77d2: #2f77d2;
+  --hxg-347fde: #347fde;
+  --hxg-438de9: #438de9;
+  --hxg-468fe8: #468fe8;
+  --hxg-4a98ee: #4a98ee;
+  --hxg-4a9af0: #4a9af0;
+  --hxg-6fb3f5: #6fb3f5;
+  --hxg-73b3ff: #73b3ff;
+  --hxg-74b1f3: #74b1f3;
+  --hxg-74b1ff: #74b1ff;
+  --hxg-79b5ff: #79b5ff;
+  --hxg-79b6ff: #79b6ff;
+  --hxg-80bcff: #80bcff;
+  --hxg-83c5ff: #83c5ff;
+  --hxg-9bc8ff: #9bc8ff;
+  --hxg-9ec9ff: #9ec9ff;
+  --hxg-b9dcff: #b9dcff;
+  --hxg-c4ddf3: #c4ddf3;
+  --hxg-c4dfff: #c4dfff;
+  --hxg-c5daf5: #c5daf5;
+  --hxg-d7e9f8: #d7e9f8;
+  --hxg-dfe8f5: #dfe8f5;
+  --hxg-e8f2ff: #e8f2ff;
+  --hxg-e8f5ff: #e8f5ff;
+  --hxg-eff6ff: #eff6ff;
+  --hxg-f0f7ff: #f0f7ff;
+  --hxg-f8fbff: #f8fbff;
+  --hxl-438de9: #438de9;
+  --hxl-a8cdf7: #a8cdf7;
+  --hxl-b8d5f8: #b8d5f8;
+  --hxl-bbd5f5: #bbd5f5;
+  --hxl-bdd3f0: #bdd3f0;
+  --hxl-bedcf5: #bedcf5;
+  --hxl-c3d8f2: #c3d8f2;
+  --hxl-c9dcf3: #c9dcf3;
+  --hxl-c9ddf5: #c9ddf5;
+  --hxl-c9dff8: #c9dff8;
+  --hxl-cfe2f8: #cfe2f8;
+  --hxl-d4e5fa: #d4e5fa;
+  --hxl-d5e7ff: #d5e7ff;
+  --hxl-d6e7fc: #d6e7fc;
+  --hxl-d9e8fb: #d9e8fb;
+  --hxl-dde8f6: #dde8f6;
+  --hxl-dfe8f6: #dfe8f6;
+  --hxl-e0eaf6: #e0eaf6;
+  --hxl-e1eaf7: #e1eaf7;
+  --hxl-e3ebf7: #e3ebf7;
+  --hxl-e5edf7: #e5edf7;
+  --hxl-e5edf8: #e5edf8;
+  --hxl-edf1f7: #edf1f7;
+  --hxl-edf2f9: #edf2f9;
+  --hxr-2f8f73: #2f8f73;
+  --hxr-438de9: #438de9;
+  --hxt-164b90: #164b90;
+  --hxt-17365f: #17365f;
+  --hxt-173d78: #173d78;
+  --hxt-174a88: #174a88;
+  --hxt-174c90: #174c90;
+  --hxt-174f9c: #174f9c;
+  --hxt-203b60: #203b60;
+  --hxt-259568: #259568;
+  --hxt-2b5a91: #2b5a91;
+  --hxt-2f7d64: #2f7d64;
+  --hxt-536681: #536681;
+  --hxt-536b8b: #536b8b;
+  --hxt-607a9b: #607a9b;
+  --hxt-63758f: #63758f;
+  --hxt-667b98: #667b98;
+  --hxt-6c91c3: #6c91c3;
+  --hxt-71839d: #71839d;
+  --hxt-7286a1: #7286a1;
+  --hxt-7488a5: #7488a5;
+  --hxt-7589a5: #7589a5;
+  --hxt-7590b0: #7590b0;
+  --hxt-7a9cc8: #7a9cc8;
+  --hxt-7c93b2: #7c93b2;
+  --hxt-8194ad: #8194ad;
+  --hxt-8196ae: #8196ae;
+  --hxt-8498b3: #8498b3;
+  --hxt-899ab0: #899ab0;
+  --hxt-8bc5ff: #8bc5ff;
+  --hxt-8cc8ff: #8cc8ff;
+  --hxt-8da3bc: #8da3bc;
+  --hxt-9ccbff: #9ccbff;
+  --hxt-a0afc3: #a0afc3;
+  --hxt-a6cfff: #a6cfff;
+  --hxt-a8d7ff: #a8d7ff;
+  --hxt-bbd5f4: #bbd5f4;
+  --hxt-bbddff: #bbddff;
+  --hxt-bed6f4: #bed6f4;
+  --hxt-c6dcf4: #c6dcf4;
+  --hxt-c7ddf5: #c7ddf5;
+  --hxt-c7e5ff: #c7e5ff;
+  --hxt-c9d6e6: #c9d6e6;
+  --hxt-c9ddf2: #c9ddf2;
+  --hxt-cddeef: #cddeef;
+  --hxt-cfe4ff: #cfe4ff;
+  --hxt-d0e4fa: #d0e4fa;
+  --hxt-d3e5f8: #d3e5f8;
+  --hxt-d3e6fa: #d3e6fa;
+  --hxt-d49a28: #d49a28;
+  --hxt-d5e9ff: #d5e9ff;
+  --hxt-d5edff: #d5edff;
+  --hxt-d8eeff: #d8eeff;
+  --hxt-dcebfc: #dcebfc;
+  --hxt-e0efff: #e0efff;
+  --hxt-e2f0ff: #e2f0ff;
+}
+
+.dark {
+  color-scheme: dark;
+  --brand: #3f86e6;
+  --brand-dark: #4a8fe8;
+  --brand-light: #5b9bea;
+  --ink: #e8eff9;
+  --muted: #a9b7cc;
+  --subtle: #8496b0;
+  --canvas: #0b1526;
+  --tint: #162a48;
+  --tint-soft: #12233c;
+  --line: #1f3556;
+  --line-strong: #2b4570;
+  --surface: #0f1d33;
+  --accent-soft: #3a2c0c;
+  --hxb-c9e2ff: #08274b;
+  --hxb-cfe2f8: #112843;
+  --hxb-d9e8f8: #11263c;
+  --hxb-dae8f8: #11253b;
+  --hxb-dce8f6: #142538;
+  --hxb-dcebff: #071f3f;
+  --hxb-ddeaf9: #10233a;
+  --hxb-e4f0ff: #061e3a;
+  --hxb-e4f2ff: #06213a;
+  --hxb-e6f1ff: #061d39;
+  --hxb-e7f1ff: #061b38;
+  --hxb-e8f0fa: #101f32;
+  --hxb-e8f2ff: #061c38;
+  --hxb-e8f7ef: #152f21;
+  --hxb-e9f3ff: #061c37;
+  --hxb-eaf2fc: #0d1d32;
+  --hxb-ebf8f2: #142d21;
+  --hxb-edf5ff: #061b35;
+  --hxb-eef2f7: #171f29;
+  --hxb-eef3fa: #111c2c;
+  --hxb-eef5fd: #0b1c30;
+  --hxb-f0f5fc: #0e1b2d;
+  --hxb-f1f7ff: #061932;
+  --hxb-f3f6fa: #131c26;
+  --hxb-f3f7fc: #0f1b2a;
+  --hxb-f4f8ff: #051530;
+  --hxb-f5f9ff: #051630;
+  --hxb-f8fafe: #0a1529;
+  --hxb-f8faff: #05112e;
+  --hxb-f9fbfe: #0b1628;
+  --hxb-fff1cf: #483508;
+  --hxb-fffafa: #2c0505;
+  --hxg-b9dcff: #092f55;
+  --hxg-c4ddf3: #163149;
+  --hxg-c4dfff: #09294e;
+  --hxg-c5daf5: #142b49;
+  --hxg-d7e9f8: #11293e;
+  --hxg-dfe8f5: #162335;
+  --hxg-e8f2ff: #061c38;
+  --hxg-e8f5ff: #062238;
+  --hxg-eff6ff: #061a33;
+  --hxg-f0f7ff: #061b33;
+  --hxg-f8fbff: #05162e;
+  --hxl-b8d5f8: #234e81;
+  --hxl-bbd5f5: #274e7d;
+  --hxl-bdd3f0: #2f4e78;
+  --hxl-bedcf5: #27557b;
+  --hxl-c3d8f2: #2c4c74;
+  --hxl-c9dcf3: #2b4a70;
+  --hxl-c9ddf5: #284971;
+  --hxl-c9dff8: #234974;
+  --hxl-cfe2f8: #23466f;
+  --hxl-d4e5fa: #1f426d;
+  --hxl-d5e7ff: #143d73;
+  --hxl-d6e7fc: #1b406e;
+  --hxl-d9e8fb: #1d3f6a;
+  --hxl-dde8f6: #284160;
+  --hxl-dfe8f6: #293e5e;
+  --hxl-e0eaf6: #29415d;
+  --hxl-e1eaf7: #273d5d;
+  --hxl-e3ebf7: #283c5b;
+  --hxl-e5edf7: #293e59;
+  --hxl-e5edf8: #263c5a;
+  --hxl-edf1f7: #2d3a4e;
+  --hxl-edf2f9: #273952;
+  --hxt-164b90: #91b7e9;
+  --hxt-17365f: #b6ccea;
+  --hxt-173d78: #a3bee9;
+  --hxt-174a88: #97bbe8;
+  --hxt-174c90: #91b7e8;
+  --hxt-174f9c: #88b0e7;
+  --hxt-203b60: #b5c8e3;
+  --hxt-259568: #8cddbd;
+  --hxt-2b5a91: #8fb1d9;
+  --hxt-2f7d64: #9ed6c4;
+  --hxt-536681: #9aa7bb;
+  --hxt-536b8b: #92a3ba;
+  --hxt-607a9b: #90a1b7;
+  --hxt-63758f: #94a0b2;
+  --hxt-667b98: #93a1b3;
+  --hxt-6c91c3: #809ec6;
+  --hxt-71839d: #94a0b2;
+  --hxt-7286a1: #93a1b4;
+  --hxt-7488a5: #92a0b5;
+  --hxt-7589a5: #92a0b5;
+  --hxt-7590b0: #8da1ba;
+  --hxt-7c93b2: #8ea0b9;
+  --hxt-8194ad: #92a1b5;
+  --hxt-8196ae: #91a2b5;
+  --hxt-8498b3: #90a0b7;
+  --hxt-899ab0: #93a1b4;
+  --hxt-d49a28: #dcb66b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-canvas: var(--canvas);
+  --color-tint: var(--tint);
+  --color-tint-soft: var(--tint-soft);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-surface: var(--surface);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink-soft: var(--ink-soft);
+  --color-navy: var(--navy);
+  --color-accent: var(--accent);
+  --color-hxb-102b53: var(--hxb-102b53);
+  --color-hxb-102d70: var(--hxb-102d70);
+  --color-hxb-174a98: var(--hxb-174a98);
+  --color-hxb-1955a0: var(--hxb-1955a0);
+  --color-hxb-1b4b87: var(--hxb-1b4b87);
+  --color-hxb-2f8f73: var(--hxb-2f8f73);
+  --color-hxb-347fd8: var(--hxb-347fd8);
+  --color-hxb-377ee3: var(--hxb-377ee3);
+  --color-hxb-65adff: var(--hxb-65adff);
+  --color-hxb-8bc4ff: var(--hxb-8bc4ff);
+  --color-hxb-8ebeff: var(--hxb-8ebeff);
+  --color-hxb-9cd3ff: var(--hxb-9cd3ff);
+  --color-hxb-a7ddff: var(--hxb-a7ddff);
+  --color-hxb-a8dcff: var(--hxb-a8dcff);
+  --color-hxb-c9e2ff: var(--hxb-c9e2ff);
+  --color-hxb-cfe2f8: var(--hxb-cfe2f8);
+  --color-hxb-d9e8f8: var(--hxb-d9e8f8);
+  --color-hxb-dae8f8: var(--hxb-dae8f8);
+  --color-hxb-dce8f6: var(--hxb-dce8f6);
+  --color-hxb-dcebff: var(--hxb-dcebff);
+  --color-hxb-ddeaf9: var(--hxb-ddeaf9);
+  --color-hxb-e4f0ff: var(--hxb-e4f0ff);
+  --color-hxb-e4f2ff: var(--hxb-e4f2ff);
+  --color-hxb-e6f1ff: var(--hxb-e6f1ff);
+  --color-hxb-e7f1ff: var(--hxb-e7f1ff);
+  --color-hxb-e8f0fa: var(--hxb-e8f0fa);
+  --color-hxb-e8f2ff: var(--hxb-e8f2ff);
+  --color-hxb-e8f7ef: var(--hxb-e8f7ef);
+  --color-hxb-e9f3ff: var(--hxb-e9f3ff);
+  --color-hxb-eaf2fc: var(--hxb-eaf2fc);
+  --color-hxb-ebf8f2: var(--hxb-ebf8f2);
+  --color-hxb-edf5ff: var(--hxb-edf5ff);
+  --color-hxb-eef2f7: var(--hxb-eef2f7);
+  --color-hxb-eef3fa: var(--hxb-eef3fa);
+  --color-hxb-eef5fd: var(--hxb-eef5fd);
+  --color-hxb-f0f5fc: var(--hxb-f0f5fc);
+  --color-hxb-f1f7ff: var(--hxb-f1f7ff);
+  --color-hxb-f3f6fa: var(--hxb-f3f6fa);
+  --color-hxb-f3f7fc: var(--hxb-f3f7fc);
+  --color-hxb-f4f8ff: var(--hxb-f4f8ff);
+  --color-hxb-f5f9ff: var(--hxb-f5f9ff);
+  --color-hxb-f8fafe: var(--hxb-f8fafe);
+  --color-hxb-f8faff: var(--hxb-f8faff);
+  --color-hxb-f9fbfe: var(--hxb-f9fbfe);
+  --color-hxb-fff1cf: var(--hxb-fff1cf);
+  --color-hxb-fffafa: var(--hxb-fffafa);
+  --color-hxg-071a39: var(--hxg-071a39);
+  --color-hxg-0a2a57: var(--hxg-0a2a57);
+  --color-hxg-0c3678: var(--hxg-0c3678);
+  --color-hxg-102c64: var(--hxg-102c64);
+  --color-hxg-1b4b87: var(--hxg-1b4b87);
+  --color-hxg-2369c5: var(--hxg-2369c5);
+  --color-hxg-2465be: var(--hxg-2465be);
+  --color-hxg-2768c1: var(--hxg-2768c1);
+  --color-hxg-2f77d2: var(--hxg-2f77d2);
+  --color-hxg-347fde: var(--hxg-347fde);
+  --color-hxg-438de9: var(--hxg-438de9);
+  --color-hxg-468fe8: var(--hxg-468fe8);
+  --color-hxg-4a98ee: var(--hxg-4a98ee);
+  --color-hxg-4a9af0: var(--hxg-4a9af0);
+  --color-hxg-6fb3f5: var(--hxg-6fb3f5);
+  --color-hxg-73b3ff: var(--hxg-73b3ff);
+  --color-hxg-74b1f3: var(--hxg-74b1f3);
+  --color-hxg-74b1ff: var(--hxg-74b1ff);
+  --color-hxg-79b5ff: var(--hxg-79b5ff);
+  --color-hxg-79b6ff: var(--hxg-79b6ff);
+  --color-hxg-80bcff: var(--hxg-80bcff);
+  --color-hxg-83c5ff: var(--hxg-83c5ff);
+  --color-hxg-9bc8ff: var(--hxg-9bc8ff);
+  --color-hxg-9ec9ff: var(--hxg-9ec9ff);
+  --color-hxg-b9dcff: var(--hxg-b9dcff);
+  --color-hxg-c4ddf3: var(--hxg-c4ddf3);
+  --color-hxg-c4dfff: var(--hxg-c4dfff);
+  --color-hxg-c5daf5: var(--hxg-c5daf5);
+  --color-hxg-d7e9f8: var(--hxg-d7e9f8);
+  --color-hxg-dfe8f5: var(--hxg-dfe8f5);
+  --color-hxg-e8f2ff: var(--hxg-e8f2ff);
+  --color-hxg-e8f5ff: var(--hxg-e8f5ff);
+  --color-hxg-eff6ff: var(--hxg-eff6ff);
+  --color-hxg-f0f7ff: var(--hxg-f0f7ff);
+  --color-hxg-f8fbff: var(--hxg-f8fbff);
+  --color-hxl-438de9: var(--hxl-438de9);
+  --color-hxl-a8cdf7: var(--hxl-a8cdf7);
+  --color-hxl-b8d5f8: var(--hxl-b8d5f8);
+  --color-hxl-bbd5f5: var(--hxl-bbd5f5);
+  --color-hxl-bdd3f0: var(--hxl-bdd3f0);
+  --color-hxl-bedcf5: var(--hxl-bedcf5);
+  --color-hxl-c3d8f2: var(--hxl-c3d8f2);
+  --color-hxl-c9dcf3: var(--hxl-c9dcf3);
+  --color-hxl-c9ddf5: var(--hxl-c9ddf5);
+  --color-hxl-c9dff8: var(--hxl-c9dff8);
+  --color-hxl-cfe2f8: var(--hxl-cfe2f8);
+  --color-hxl-d4e5fa: var(--hxl-d4e5fa);
+  --color-hxl-d5e7ff: var(--hxl-d5e7ff);
+  --color-hxl-d6e7fc: var(--hxl-d6e7fc);
+  --color-hxl-d9e8fb: var(--hxl-d9e8fb);
+  --color-hxl-dde8f6: var(--hxl-dde8f6);
+  --color-hxl-dfe8f6: var(--hxl-dfe8f6);
+  --color-hxl-e0eaf6: var(--hxl-e0eaf6);
+  --color-hxl-e1eaf7: var(--hxl-e1eaf7);
+  --color-hxl-e3ebf7: var(--hxl-e3ebf7);
+  --color-hxl-e5edf7: var(--hxl-e5edf7);
+  --color-hxl-e5edf8: var(--hxl-e5edf8);
+  --color-hxl-edf1f7: var(--hxl-edf1f7);
+  --color-hxl-edf2f9: var(--hxl-edf2f9);
+  --color-hxr-2f8f73: var(--hxr-2f8f73);
+  --color-hxr-438de9: var(--hxr-438de9);
+  --color-hxt-164b90: var(--hxt-164b90);
+  --color-hxt-17365f: var(--hxt-17365f);
+  --color-hxt-173d78: var(--hxt-173d78);
+  --color-hxt-174a88: var(--hxt-174a88);
+  --color-hxt-174c90: var(--hxt-174c90);
+  --color-hxt-174f9c: var(--hxt-174f9c);
+  --color-hxt-203b60: var(--hxt-203b60);
+  --color-hxt-259568: var(--hxt-259568);
+  --color-hxt-2b5a91: var(--hxt-2b5a91);
+  --color-hxt-2f7d64: var(--hxt-2f7d64);
+  --color-hxt-536681: var(--hxt-536681);
+  --color-hxt-536b8b: var(--hxt-536b8b);
+  --color-hxt-607a9b: var(--hxt-607a9b);
+  --color-hxt-63758f: var(--hxt-63758f);
+  --color-hxt-667b98: var(--hxt-667b98);
+  --color-hxt-6c91c3: var(--hxt-6c91c3);
+  --color-hxt-71839d: var(--hxt-71839d);
+  --color-hxt-7286a1: var(--hxt-7286a1);
+  --color-hxt-7488a5: var(--hxt-7488a5);
+  --color-hxt-7589a5: var(--hxt-7589a5);
+  --color-hxt-7590b0: var(--hxt-7590b0);
+  --color-hxt-7a9cc8: var(--hxt-7a9cc8);
+  --color-hxt-7c93b2: var(--hxt-7c93b2);
+  --color-hxt-8194ad: var(--hxt-8194ad);
+  --color-hxt-8196ae: var(--hxt-8196ae);
+  --color-hxt-8498b3: var(--hxt-8498b3);
+  --color-hxt-899ab0: var(--hxt-899ab0);
+  --color-hxt-8bc5ff: var(--hxt-8bc5ff);
+  --color-hxt-8cc8ff: var(--hxt-8cc8ff);
+  --color-hxt-8da3bc: var(--hxt-8da3bc);
+  --color-hxt-9ccbff: var(--hxt-9ccbff);
+  --color-hxt-a0afc3: var(--hxt-a0afc3);
+  --color-hxt-a6cfff: var(--hxt-a6cfff);
+  --color-hxt-a8d7ff: var(--hxt-a8d7ff);
+  --color-hxt-bbd5f4: var(--hxt-bbd5f4);
+  --color-hxt-bbddff: var(--hxt-bbddff);
+  --color-hxt-bed6f4: var(--hxt-bed6f4);
+  --color-hxt-c6dcf4: var(--hxt-c6dcf4);
+  --color-hxt-c7ddf5: var(--hxt-c7ddf5);
+  --color-hxt-c7e5ff: var(--hxt-c7e5ff);
+  --color-hxt-c9d6e6: var(--hxt-c9d6e6);
+  --color-hxt-c9ddf2: var(--hxt-c9ddf2);
+  --color-hxt-cddeef: var(--hxt-cddeef);
+  --color-hxt-cfe4ff: var(--hxt-cfe4ff);
+  --color-hxt-d0e4fa: var(--hxt-d0e4fa);
+  --color-hxt-d3e5f8: var(--hxt-d3e5f8);
+  --color-hxt-d3e6fa: var(--hxt-d3e6fa);
+  --color-hxt-d49a28: var(--hxt-d49a28);
+  --color-hxt-d5e9ff: var(--hxt-d5e9ff);
+  --color-hxt-d5edff: var(--hxt-d5edff);
+  --color-hxt-d8eeff: var(--hxt-d8eeff);
+  --color-hxt-dcebfc: var(--hxt-dcebfc);
+  --color-hxt-e0efff: var(--hxt-e0efff);
+  --color-hxt-e2f0ff: var(--hxt-e2f0ff);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+/* Clear, consistent keyboard focus on every interactive element */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Form fields follow the theme */
+input, select, textarea {
+  color-scheme: inherit;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--subtle);
+}
+.dark input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 1000px var(--tint) inset;
+}
+
+/* Soft dotted pattern used for decorative backgrounds */
+.bg-dots {
+  background-image: radial-gradient(
+    rgba(37, 99, 184, 0.16) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 22px 22px;
+}
+.dark .bg-dots {
+  background-image: radial-gradient(
+    rgba(120, 170, 240, 0.18) 1.2px,
+    transparent 1.2px
+  );
+}
+
+/* Subtle lift on hover for cards (disabled for reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    transition: none;
+  }
 }

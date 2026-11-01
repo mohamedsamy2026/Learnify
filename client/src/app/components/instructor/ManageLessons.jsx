@@ -208,16 +208,16 @@ export default function ManageLessons({ courseId }) {
 
   if (loading && !course) {
     return (
-      <main className="flex min-h-[70vh] items-center justify-center bg-[#F6F9FD] px-6">
-        <div className="flex flex-col items-center gap-4 rounded-3xl border border-[#DFE8F3] bg-white px-12 py-10 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+      <main className="flex min-h-[70vh] items-center justify-center bg-canvas px-6">
+        <div className="flex flex-col items-center gap-4 rounded-3xl border border-line bg-surface px-12 py-10 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-tint text-brand">
             <LoaderCircle
               size={26}
               className="animate-spin"
             />
           </div>
 
-          <p className="text-sm font-semibold text-[#64768F]">
+          <p className="text-sm font-semibold text-muted">
             Loading lessons...
           </p>
         </div>
@@ -229,23 +229,23 @@ export default function ManageLessons({ courseId }) {
 
   if (!authorized || !course) {
     return (
-      <main className="flex min-h-[70vh] items-center justify-center bg-[#F6F9FD] px-6 py-12">
-        <div className="w-full max-w-md rounded-3xl border border-[#DFE8F3] bg-white p-9 text-center shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+      <main className="flex min-h-[70vh] items-center justify-center bg-canvas px-6 py-12">
+        <div className="w-full max-w-md rounded-3xl border border-line bg-surface p-9 text-center shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
             <GraduationCap size={32} strokeWidth={1.6} />
           </div>
 
-          <h1 className="mt-6 text-2xl font-extrabold text-[#0F2A4A]">
+          <h1 className="mt-6 text-2xl font-extrabold text-ink">
             Unable to Access Course
           </h1>
 
-          <p className="mt-3 text-sm leading-7 text-[#64768F]">
+          <p className="mt-3 text-sm leading-7 text-muted">
             {error || "Course unavailable."}
           </p>
 
           <Link
             href="/instructor"
-            className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#2563B8] px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+            className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
           >
             <ArrowLeft size={18} />
             Back to Dashboard
@@ -280,11 +280,11 @@ export default function ManageLessons({ courseId }) {
   ];
 
   return (
-    <main className="min-h-screen overflow-x-clip bg-[#F6F9FD]">
+    <main className="min-h-screen overflow-x-clip bg-canvas">
 
       {/* ================= HERO ================= */}
 
-      <section className="bg-[#12386F] pb-32 pt-14 text-white sm:pb-36 sm:pt-16">
+      <section className="bg-ink-soft pb-32 pt-14 text-white sm:pb-36 sm:pt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
 
           {/* BACK LINK */}
@@ -305,7 +305,7 @@ export default function ManageLessons({ courseId }) {
           <div className="mt-9 flex flex-col justify-between gap-8 md:flex-row md:items-end">
 
             <div className="min-w-0">
-              <p className="mb-3 text-sm font-bold text-[#9CCBFF]">
+              <p className="mb-3 text-sm font-bold text-hxt-9ccbff">
                 Course Content Management
               </p>
 
@@ -313,7 +313,7 @@ export default function ManageLessons({ courseId }) {
                 Manage Lessons
               </h1>
 
-              <p className="mt-4 max-w-xl break-words text-[16px] leading-8 text-[#C6DCF4]">
+              <p className="mt-4 max-w-xl break-words text-[16px] leading-8 text-hxt-c6dcf4">
                 {course.coursename}
               </p>
             </div>
@@ -323,7 +323,7 @@ export default function ManageLessons({ courseId }) {
             <button
               type="button"
               onClick={openCreate}
-              className="group/create inline-flex min-h-[52px] w-fit shrink-0 items-center justify-center gap-2.5 rounded-xl bg-white px-7 text-sm font-extrabold text-[#12386F] transition-colors duration-200 hover:bg-[#EAF3FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#12386F]"
+              className="group/create inline-flex min-h-[52px] w-fit shrink-0 items-center justify-center gap-2.5 rounded-xl bg-white px-7 text-sm font-extrabold text-ink-soft transition-colors duration-200 hover:bg-[#EAF2FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink-soft"
             >
               <Plus
                 size={20}
@@ -359,7 +359,7 @@ export default function ManageLessons({ courseId }) {
         {notice && (
           <div
             role="status"
-            className="mb-6 flex items-start gap-3 rounded-xl border border-[#CFE2F8] bg-[#EAF4FF] px-5 py-4 text-sm font-medium text-[#174A88]"
+            className="mb-6 flex items-start gap-3 rounded-xl border border-hxl-cfe2f8 bg-tint px-5 py-4 text-sm font-medium text-hxt-174a88"
           >
             <CheckCircle2 size={20} className="shrink-0" />
             {notice}
@@ -389,17 +389,17 @@ export default function ManageLessons({ courseId }) {
           {summaryCards.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
-              className="rounded-3xl border border-[#DFE8F3] bg-white p-6 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]"
+              className="rounded-3xl border border-line bg-surface p-6 shadow-[0_16px_40px_-28px_rgba(15,42,74,0.3)]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EAF2FC] text-[#2563B8]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tint text-brand">
                 <Icon size={24} strokeWidth={1.8} />
               </div>
 
-              <p className="mt-6 text-[34px] font-extrabold leading-none tracking-[-0.04em] text-[#0F2A4A] sm:text-[36px]">
+              <p className="mt-6 text-[34px] font-extrabold leading-none tracking-[-0.04em] text-ink sm:text-[36px]">
                 {value}
               </p>
 
-              <p className="mt-2 text-sm font-semibold text-[#64768F]">
+              <p className="mt-2 text-sm font-semibold text-muted">
                 {label}
               </p>
             </div>
@@ -410,11 +410,11 @@ export default function ManageLessons({ courseId }) {
 
         <div className="mb-7 mt-14 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#0F2A4A] sm:text-[34px]">
+            <h2 className="text-3xl font-extrabold tracking-tight text-ink sm:text-[34px]">
               Course Curriculum
             </h2>
 
-            <p className="mt-2 text-sm leading-7 text-[#64768F]">
+            <p className="mt-2 text-sm leading-7 text-muted">
               Lessons are displayed in their assigned order.
             </p>
           </div>
@@ -423,7 +423,7 @@ export default function ManageLessons({ courseId }) {
             type="button"
             onClick={loadData}
             disabled={loading}
-            className="group/refresh inline-flex min-h-[44px] items-center justify-center gap-2.5 rounded-xl border border-[#D3E2F4] bg-white px-5 text-sm font-bold text-[#2563B8] transition-colors duration-200 hover:border-[#2563B8] hover:bg-[#F3F8FE] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="group/refresh inline-flex min-h-[44px] items-center justify-center gap-2.5 rounded-xl border border-line-strong bg-surface px-5 text-sm font-bold text-brand transition-colors duration-200 hover:border-brand hover:bg-tint-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <RefreshCw
               size={17}
@@ -440,24 +440,24 @@ export default function ManageLessons({ courseId }) {
         {/* ================= EMPTY STATE ================= */}
 
         {lessons.length === 0 ? (
-          <div className="flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-[#C3D8F2] bg-white p-8 text-center">
+          <div className="flex min-h-[340px] flex-col items-center justify-center rounded-3xl border border-dashed border-hxl-c3d8f2 bg-surface p-8 text-center">
 
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#EAF2FC] text-[#2563B8]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-tint text-brand">
               <BookOpen size={32} strokeWidth={1.5} />
             </div>
 
-            <h3 className="mt-6 text-2xl font-extrabold text-[#0F2A4A]">
+            <h3 className="mt-6 text-2xl font-extrabold text-ink">
               No lessons yet
             </h3>
 
-            <p className="mt-2 max-w-md text-sm leading-7 text-[#64768F]">
+            <p className="mt-2 max-w-md text-sm leading-7 text-muted">
               Start building your course by adding the first lesson.
             </p>
 
             <button
               type="button"
               onClick={openCreate}
-              className="group/first mt-6 inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-[#2563B8] px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-[#1D4F94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] focus-visible:ring-offset-2"
+              className="group/first mt-6 inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-brand px-7 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
             >
               <Plus
                 size={18}
@@ -475,25 +475,25 @@ export default function ManageLessons({ courseId }) {
             {lessons.map((lesson) => (
               <article
                 key={lesson.lessonid}
-                className="flex flex-col justify-between gap-5 rounded-2xl border border-[#DFE8F3] bg-white p-5 shadow-[0_10px_30px_-24px_rgba(15,42,74,0.3)] transition-shadow duration-300 hover:shadow-[0_16px_40px_-26px_rgba(15,42,74,0.4)] sm:flex-row sm:items-center sm:p-6"
+                className="flex flex-col justify-between gap-5 rounded-2xl border border-line bg-surface p-5 shadow-[0_10px_30px_-24px_rgba(15,42,74,0.3)] transition-shadow duration-300 hover:shadow-[0_16px_40px_-26px_rgba(15,42,74,0.4)] sm:flex-row sm:items-center sm:p-6"
               >
                 {/* LEFT CONTENT */}
                 <div className="flex min-w-0 items-start gap-4 sm:gap-5">
 
                   {/* LESSON NUMBER */}
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#EAF2FC] text-lg font-extrabold text-[#2563B8]">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-tint text-lg font-extrabold text-brand">
                     {lesson.lessonorder}
                   </span>
 
                   {/* DETAILS */}
                   <div className="min-w-0">
 
-                    <h3 className="break-words text-lg font-extrabold leading-7 text-[#0F2A4A]">
+                    <h3 className="break-words text-lg font-extrabold leading-7 text-ink">
                       {lesson.lessonname}
                     </h3>
 
                     {lesson.description && (
-                      <p className="mt-1.5 line-clamp-2 text-sm leading-6 text-[#64768F]">
+                      <p className="mt-1.5 line-clamp-2 text-sm leading-6 text-muted">
                         {lesson.description}
                       </p>
                     )}
@@ -501,10 +501,10 @@ export default function ManageLessons({ courseId }) {
                     {/* METADATA */}
                     <div className="mt-3 flex flex-wrap items-center gap-2.5">
 
-                      <span className="inline-flex items-center gap-2 rounded-full bg-[#F3F8FE] px-3 py-1.5 text-xs font-semibold text-[#55657C]">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-tint-soft px-3 py-1.5 text-xs font-semibold text-muted">
                         <Clock3
                           size={15}
-                          className="text-[#2563B8]"
+                          className="text-brand"
                         />
                         {formatDuration(
                           lesson.durationseconds
@@ -514,8 +514,8 @@ export default function ManageLessons({ courseId }) {
                       <span
                         className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${
                           lesson.video_url
-                            ? "bg-[#EBF8F2] text-[#2F7D64]"
-                            : "bg-[#F3F6FA] text-[#7C8DA6]"
+                            ? "bg-hxb-ebf8f2 text-hxt-2f7d64"
+                            : "bg-hxb-f3f6fa text-subtle"
                         }`}
                       >
                         <Video size={15} />
@@ -533,7 +533,7 @@ export default function ManageLessons({ courseId }) {
                   <button
                     type="button"
                     onClick={() => openEdit(lesson)}
-                    className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-xl bg-[#EAF2FC] px-5 text-sm font-bold text-[#2563B8] transition-colors duration-200 hover:bg-[#DAE8F8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8] sm:flex-none"
+                    className="inline-flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded-xl bg-tint px-5 text-sm font-bold text-brand transition-colors duration-200 hover:bg-hxb-dae8f8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:flex-none"
                   >
                     <Pencil size={16} />
                     Edit

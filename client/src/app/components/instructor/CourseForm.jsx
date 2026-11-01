@@ -21,19 +21,19 @@ const emptyForm = {
 
 const inputClass = `
   mt-2.5 block h-[54px] w-full
-  rounded-xl border border-[#DCE7F5]
-  bg-white px-4
-  text-[14px] font-medium text-[#0F2A4A]
+  rounded-xl border border-line
+  bg-surface px-4
+  text-[14px] font-medium text-ink
   outline-none
   transition-colors duration-200
-  placeholder:text-[#9AACBF]
-  hover:border-[#B9D1EE]
-  focus:border-[#2563B8]
-  focus:ring-4 focus:ring-[#2563B8]/10
+  placeholder:text-subtle
+  hover:border-line-strong
+  focus:border-brand
+  focus:ring-4 focus:ring-brand/10
 `;
 
 const labelClass =
-  "group/field block text-sm font-bold text-[#0F2A4A]";
+  "group/field block text-sm font-bold text-ink";
 
 export default function CourseForm({
   course,
@@ -115,23 +115,23 @@ export default function CourseForm({
   }
 
   return (
-    <div className="rounded-3xl border border-[#DFE8F3] bg-white p-5 shadow-[0_16px_40px_-30px_rgba(15,42,74,0.3)] sm:p-8 lg:p-9">
+    <div className="rounded-3xl border border-line bg-surface p-5 shadow-[0_16px_40px_-30px_rgba(15,42,74,0.3)] sm:p-8 lg:p-9">
 
       {/* ================= HEADER ================= */}
 
-      <div className="mb-8 flex items-start justify-between gap-5 border-b border-[#E8EFF8] pb-6">
+      <div className="mb-8 flex items-start justify-between gap-5 border-b border-tint pb-6">
         <div className="flex items-center gap-4">
 
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2563B8] text-white">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand text-white">
             <BookOpen size={24} strokeWidth={1.8} />
           </div>
 
           <div className="min-w-0">
-            <h2 className="text-xl font-extrabold tracking-tight text-[#0F2A4A] sm:text-[26px]">
+            <h2 className="text-xl font-extrabold tracking-tight text-ink sm:text-[26px]">
               {editing ? "Edit Course" : "Create New Course"}
             </h2>
 
-            <p className="mt-1.5 text-sm leading-6 text-[#64768F]">
+            <p className="mt-1.5 text-sm leading-6 text-muted">
               Fill in the course information below.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function CourseForm({
           type="button"
           onClick={onCancel}
           aria-label="Close form"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[#64768F] transition-colors duration-200 hover:bg-[#EAF2FC] hover:text-[#2563B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563B8]"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-muted transition-colors duration-200 hover:bg-tint hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
           <X size={20} />
         </button>
@@ -154,8 +154,8 @@ export default function CourseForm({
         {/* COURSE NAME */}
 
         <label className={labelClass}>
-          <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
-            Course Name <span className="text-[#2563B8]">*</span>
+          <span className="transition-colors duration-200 group-focus-within/field:text-brand">
+            Course Name <span className="text-brand">*</span>
           </span>
 
           <input
@@ -172,7 +172,7 @@ export default function CourseForm({
         {/* DESCRIPTION */}
 
         <label className={labelClass}>
-          <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
+          <span className="transition-colors duration-200 group-focus-within/field:text-brand">
             Description
           </span>
 
@@ -184,16 +184,16 @@ export default function CourseForm({
             placeholder="What will students learn?"
             className="
               mt-2.5 block w-full resize-y
-              rounded-xl border border-[#DCE7F5]
-              bg-white px-4 py-3.5
+              rounded-xl border border-line
+              bg-surface px-4 py-3.5
               text-[14px] font-medium leading-7
-              text-[#0F2A4A]
+              text-ink
               outline-none
               transition-colors duration-200
-              placeholder:text-[#9AACBF]
-              hover:border-[#B9D1EE]
-              focus:border-[#2563B8]
-              focus:ring-4 focus:ring-[#2563B8]/10
+              placeholder:text-subtle
+              hover:border-line-strong
+              focus:border-brand
+              focus:ring-4 focus:ring-brand/10
             "
           />
         </label>
@@ -201,7 +201,7 @@ export default function CourseForm({
         {/* THUMBNAIL URL */}
 
         <label className={labelClass}>
-          <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
+          <span className="transition-colors duration-200 group-focus-within/field:text-brand">
             Thumbnail URL
           </span>
 
@@ -222,7 +222,7 @@ export default function CourseForm({
           {/* CATEGORY */}
 
           <label className={labelClass}>
-            <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
+            <span className="transition-colors duration-200 group-focus-within/field:text-brand">
               Category
             </span>
 
@@ -238,8 +238,8 @@ export default function CourseForm({
           {/* LEVEL */}
 
           <label className={labelClass}>
-            <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
-              Level <span className="text-[#2563B8]">*</span>
+            <span className="transition-colors duration-200 group-focus-within/field:text-brand">
+              Level <span className="text-brand">*</span>
             </span>
 
             <div className="relative">
@@ -257,7 +257,7 @@ export default function CourseForm({
               <ChevronDown
                 size={18}
                 aria-hidden="true"
-                className="pointer-events-none absolute right-4 top-[39px] -translate-y-1/2 text-[#7C93B2]"
+                className="pointer-events-none absolute right-4 top-[39px] -translate-y-1/2 text-hxt-7c93b2"
               />
             </div>
           </label>
@@ -266,14 +266,14 @@ export default function CourseForm({
         {/* PRICE */}
 
         <label className={labelClass}>
-          <span className="transition-colors duration-200 group-focus-within/field:text-[#2563B8]">
-            Price (USD) <span className="text-[#2563B8]">*</span>
+          <span className="transition-colors duration-200 group-focus-within/field:text-brand">
+            Price (USD) <span className="text-brand">*</span>
           </span>
 
           <div className="relative">
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute left-4 top-[39px] -translate-y-1/2 text-sm font-bold text-[#7C93B2]"
+              className="pointer-events-none absolute left-4 top-[39px] -translate-y-1/2 text-sm font-bold text-hxt-7c93b2"
             >
               $
             </span>
@@ -290,7 +290,7 @@ export default function CourseForm({
             />
           </div>
 
-          <span className="mt-2 block text-xs font-normal text-[#7C8DA6]">
+          <span className="mt-2 block text-xs font-normal text-subtle">
             Enter 0 for a free course.
           </span>
         </label>
@@ -308,7 +308,7 @@ export default function CourseForm({
 
         {/* ================= ACTIONS ================= */}
 
-        <div className="flex flex-col-reverse gap-3 border-t border-[#E8EFF8] pt-6 sm:flex-row sm:items-center">
+        <div className="flex flex-col-reverse gap-3 border-t border-tint pt-6 sm:flex-row sm:items-center">
 
           {/* SAVE BUTTON */}
 
@@ -317,13 +317,13 @@ export default function CourseForm({
             disabled={submitting}
             className="
               inline-flex min-h-[50px] items-center justify-center gap-2.5
-              rounded-xl bg-[#2563B8] px-8
+              rounded-xl bg-brand px-8
               text-sm font-bold text-white
               transition-colors duration-200
-              hover:bg-[#1D4F94]
+              hover:bg-brand-dark
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
               focus-visible:ring-offset-2
               disabled:cursor-not-allowed disabled:opacity-60
             "
@@ -351,15 +351,15 @@ export default function CourseForm({
             className="
               inline-flex min-h-[50px]
               items-center justify-center
-              rounded-xl border border-[#D3E2F4]
-              bg-white px-7
-              text-sm font-bold text-[#55657C]
+              rounded-xl border border-line-strong
+              bg-surface px-7
+              text-sm font-bold text-muted
               transition-colors duration-200
-              hover:border-[#2563B8]
-              hover:text-[#2563B8]
+              hover:border-brand
+              hover:text-brand
               focus-visible:outline-none
               focus-visible:ring-2
-              focus-visible:ring-[#2563B8]
+              focus-visible:ring-brand
               focus-visible:ring-offset-2
             "
           >

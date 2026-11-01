@@ -200,8 +200,8 @@ export default function VideoPlayer({
 
   if (!source) {
     return (
-      <div className="flex aspect-video min-h-[250px] flex-col items-center justify-center rounded-3xl bg-[#12386F] px-6 text-center text-white">
-        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-[#BBDDFF]">
+      <div className="flex aspect-video min-h-[250px] flex-col items-center justify-center rounded-3xl bg-ink-soft px-6 text-center text-white">
+        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-hxt-bbddff">
           <VideoOff size={32} strokeWidth={1.5} />
         </div>
 
@@ -209,7 +209,7 @@ export default function VideoPlayer({
           Video unavailable
         </h3>
 
-        <p className="mt-2 max-w-sm text-sm leading-7 text-[#BBD5F4]">
+        <p className="mt-2 max-w-sm text-sm leading-7 text-hxt-bbd5f4">
           This lesson does not have a supported video
           source yet.
         </p>
@@ -218,7 +218,7 @@ export default function VideoPlayer({
   }
 
   return (
-    <div className="overflow-hidden rounded-3xl bg-[#12386F]">
+    <div className="overflow-hidden rounded-3xl bg-ink-soft">
 
       {/* ================= VIDEO AREA ================= */}
 
@@ -279,7 +279,7 @@ export default function VideoPlayer({
           <PlayCircle
             size={20}
             strokeWidth={1.8}
-            className="shrink-0 text-[#9CCBFF]"
+            className="shrink-0 text-hxt-9ccbff"
           />
 
           <span className="min-w-0 truncate text-[13px] font-semibold text-white sm:text-sm">
@@ -289,11 +289,11 @@ export default function VideoPlayer({
 
         {/* Progress status */}
         {source.type === "youtube" ? (
-          <span className="inline-flex items-center rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-[#C7DDF5]">
+          <span className="inline-flex items-center rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-hxt-c7ddf5">
             Manual progress tracking
           </span>
         ) : saving ? (
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-[#D5E9FF]">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-hxt-d5e9ff">
             <LoaderCircle
               size={15}
               className="animate-spin"
@@ -309,10 +309,10 @@ export default function VideoPlayer({
             {saveError}
           </span>
         ) : (
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-[#C7E5FF]">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-hxt-c7e5ff">
             <CheckCircle2
               size={15}
-              className="text-[#8BC5FF]"
+              className="text-hxt-8bc5ff"
             />
             {position}s played · Auto-save
           </span>
